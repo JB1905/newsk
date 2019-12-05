@@ -5,6 +5,7 @@
     position: fixed;
     z-index: -1;
     background: url('../images/dot-grid.png');
+    background-position: center;
     top: 0;
     left: 0;
   }

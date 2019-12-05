@@ -1,4 +1,6 @@
 <script>
+  import { Link } from 'svelte-routing';
+
   export let data;
 
   const {
@@ -11,15 +13,56 @@
     publishedAt,
     source
   } = data;
+
+  const date = new Date(publishedAt);
 </script>
 
 <style>
+  main {
+    border-radius: 2px;
+    overflow: hidden;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+  }
+
+  main > div {
+    padding: 8px 16px 16px;
+  }
+
+  .footer {
+    border-top: 1px solid #eee;
+    padding-top: 16px !important;
+  }
+
+  h3,
+  h4 {
+    margin: 8px 0;
+  }
+
+  figure {
+    width: 100%;
+    height: 0;
+    padding-top: calc(100% / 16 * 9);
+    overflow: hidden;
+    position: relative;
+  }
+
   img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
   }
 
   .meta {
     display: flex;
+    margin: 8px 0;
+  }
+
+  .meta p {
+    margin-left: 10px;
   }
 
   a {
@@ -28,23 +71,38 @@
   }
 </style>
 
-<a href={url}>
-  <main>
-    <img src={urlToImage} alt={title} />
+<main>
+  {#if !!urlToImage}
+    <a href={url}>
+      <figure>
+        <img src={urlToImage} alt={title} />
+      </figure>
+    </a>
+  {/if}
 
-    <h3>{title}</h3>
-    <h4>{description}</h4>
+  <div>
+    <a href={url}>
+      <h3>{title}</h3>
+
+      {#if !!description}
+        <h4>{description}</h4>
+      {/if}
+    </a>
 
     <div class="meta">
+      <time>{date.getFullYear()}.{date.getMonth()}.{date.getDate()}</time>
+
       {#if !!author}
         <p>{author}</p>
       {/if}
-
-      <p>{publishedAt}</p>
     </div>
 
-    <p>{content}</p>
-    Source: {source.name}
-    <!-- {#if !!source.id}{/if} -->
-  </main>
-</a>
+    {#if !!content}
+      <p>{content}</p>
+    {/if}
+  </div>
+
+  <div class="footer">
+    <Link to="publishers/{source.name}">{source.name}</Link>
+  </div>
+</main>

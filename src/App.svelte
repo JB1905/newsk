@@ -18,10 +18,7 @@
   }
 
   .header {
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    position: sticky;
-    top: 0;
+    margin-top: 16px;
   }
 
   .header__inner {
@@ -33,15 +30,30 @@
     margin: 0 auto;
   }
 
+  .header h1 {
+    font-weight: 700;
+    font-size: 34px;
+    color: #000;
+  }
+
   main,
   footer {
     padding: 1.5em;
     max-width: 760px;
     margin: 0 auto;
+    width: 100%;
+  }
+
+  footer {
+    text-align: center;
   }
 
   main {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 </style>
 
@@ -53,17 +65,22 @@
           <h1>newsK</h1>
         </Link>
 
-        <nav>
+        <!-- <nav>
           <Link to="/about">About Project</Link>
-        </nav>
+        </nav> -->
       </div>
     </header>
 
     <main>
       <Route path="/" component={Home} />
-      <Route path="news/:country" component={Feed} />
+
+      <Route path=":type/:country" component={Feed} />
+
       <Route path="publishers" component={Publishers} />
-      <Route path="publishers/:id" component={Publishers} />
+
+      <Route path="publishers/:id" let:params>
+        <Feed {params} />
+      </Route>
     </main>
 
     <footer>

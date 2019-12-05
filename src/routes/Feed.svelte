@@ -1,28 +1,41 @@
 <script>
-  import axios from 'axios';
+  import { onMount } from 'svelte';
+  import queryString from 'query-string';
 
   import Article from '../components/Article.svelte';
 
-  // export let country;
-  // export let category;
+  // export let params;
+  // export let location;
 
   let articles = [];
 
-  async function getArticles() {
-    axios({
-      url: `https://newsapi.org/v2/top-headlines?country=pl&apiKey=b67650059a884ec3ae9fae3360e8281e`
-    }).then(res => {
-      articles = res.data.articles;
-    });
-  }
+  const apiKey = 'b67650059a884ec3ae9fae3360e8281e';
 
-  getArticles();
+  const type = 'top-headlines';
+  const country = 'pl';
 
-  // TODO top / everything słycz
+  // console.log(location);
+
+  // const { type = 'everything', country = 'pl' } = params;
+
+  onMount(async () => {
+    const res = await fetch(
+      `https://newsapi.org/v2/${type}?country=${country}&apiKey=${apiKey}`
+    );
+
+    const data = await res.json();
+
+    articles = data.articles;
+  });
 </script>
 
 <style>
-
+  @media (min-width: 600px) {
+    main {
+      column-gap: 20px;
+      column-count: 2;
+    }
+  }
 </style>
 
 <main>
