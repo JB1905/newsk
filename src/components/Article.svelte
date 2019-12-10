@@ -1,5 +1,6 @@
 <script>
   import { Link } from 'svelte-routing';
+  import stripHtml from 'string-strip-html';
 
   export let data;
 
@@ -98,7 +99,7 @@
     </div>
 
     {#if !!content}
-      <p>{content}</p>
+      <p>{stripHtml(content)}</p>
     {/if}
   </div>
 
