@@ -69,9 +69,7 @@
 
     <main>
       <Route path="/" component={Home} />
-
       <Route path=":type" component={NewsFeed} />
-
       <Route path="publishers" component={Publishers} />
     </main>
 
