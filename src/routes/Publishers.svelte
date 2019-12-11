@@ -1,25 +1,19 @@
 <script>
-  import Article from '../components/Article.svelte';
+  import { onMount } from 'svelte';
 
-  export let params;
+  import { apiKey } from '../api/newsapi';
 
-  let articles = [];
+  let sources = [];
 
-  // console.log(params);
+  onMount(async () => {
+    const res = await fetch(
+      `https://newsapi.org/v2/sources${location.search}?apiKey=${apiKey}`
+    );
 
-  // const apiKey = 'b67650059a884ec3ae9fae3360e8281e';
+    const data = await res.json();
 
-  // const type = 'top-headlines';
+    // console.log(data.sources);
 
-  // const country = 'pl';
-
-  // async function getArticles() {
-  //   axios({
-  //     url: `https://newsapi.org/v2/${type}?country=${country}&apiKey=${apiKey}`
-  //   }).then(res => {
-  //     articles = res.data.articles;
-  //   });
-  // }
-
-  // getArticles();
+    sources = data.sources;
+  });
 </script>

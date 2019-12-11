@@ -25,6 +25,7 @@
     background-color: #fff;
     margin-bottom: 20px;
     border: 1px solid #eee;
+    break-inside: avoid-column;
   }
 
   main > div {
@@ -104,6 +105,6 @@
   </div>
 
   <div class="footer">
-    <Link to="publishers/{source.name}">{source.name}</Link>
+    <Link to="/everything?sources={source.name}">{source.name}</Link>
   </div>
 </main>

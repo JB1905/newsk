@@ -12,7 +12,7 @@
   }
 
   const search = () => {
-    const route = ['/top-headlines/pl'];
+    const route = ['/top-headlines'];
 
     if (query) {
       route.push(`?q=${query}`);
@@ -52,8 +52,8 @@
   }
 
   nav input {
-    background: none;
     border: 0;
+    background: none;
     font-size: 12px;
     cursor: pointer;
     margin: 0;
@@ -83,7 +83,7 @@
     cursor: pointer;
   }
 
-  .cloud {
+  /* .cloud {
     display: flex;
     flex-wrap: wrap;
     margin: 5px 0 20px;
@@ -104,15 +104,13 @@
   .cloud--languages .cloud__item,
   .cloud--countries .cloud__item {
     text-transform: uppercase;
-  }
+  } */
 </style>
 
 <main>
   <div class="search">
     <input
       type="search"
-      name=""
-      id=""
       bind:value={query}
       class="search__field"
       placeholder="What are you looking for?" />

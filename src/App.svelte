@@ -2,7 +2,7 @@
   import { Router, Route, Link } from 'svelte-routing';
 
   import Home from './routes/Home.svelte';
-  import Feed from './routes/Feed.svelte';
+  import NewsFeed from './routes/NewsFeed.svelte';
   import Publishers from './routes/Publishers.svelte';
 
   import Background from './components/Background.svelte';
@@ -64,23 +64,15 @@
         <Link to="/">
           <h1>newsK</h1>
         </Link>
-
-        <!-- <nav>
-          <Link to="/about">About Project</Link>
-        </nav> -->
       </div>
     </header>
 
     <main>
       <Route path="/" component={Home} />
 
-      <Route path=":type/:country" component={Feed} />
+      <Route path=":type" component={NewsFeed} />
 
       <Route path="publishers" component={Publishers} />
-
-      <Route path="publishers/:id" let:params>
-        <Feed {params} />
-      </Route>
     </main>
 
     <footer>

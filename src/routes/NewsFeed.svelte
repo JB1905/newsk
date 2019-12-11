@@ -1,26 +1,19 @@
 <script>
   import { onMount } from 'svelte';
-  import queryString from 'query-string';
 
   import Article from '../components/Article.svelte';
 
-  // export let params;
-  // export let location;
+  import { apiKey } from '../api/newsapi';
+
+  export let location;
+
+  export let type = 'everything';
 
   let articles = [];
 
-  const apiKey = 'b67650059a884ec3ae9fae3360e8281e';
-
-  const type = 'top-headlines';
-  const country = 'pl';
-
-  // console.log(location);
-
-  // const { type = 'everything', country = 'pl' } = params;
-
   onMount(async () => {
     const res = await fetch(
-      `https://newsapi.org/v2/${type}?country=${country}&apiKey=${apiKey}`
+      `https://newsapi.org/v2/${type}${location.search}&apiKey=${apiKey}`
     );
 
     const data = await res.json();
