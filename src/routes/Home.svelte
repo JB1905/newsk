@@ -5,7 +5,7 @@
 
   let query = '';
 
-  let section = 0;
+  let section;
 
   function setSection(id) {
     section = id;
@@ -19,6 +19,10 @@
     }
 
     navigate(route.join(''));
+  };
+
+  const item = e => {
+    console.log(e);
   };
 </script>
 
@@ -83,7 +87,7 @@
     cursor: pointer;
   }
 
-  /* .cloud {
+  .cloud {
     display: flex;
     flex-wrap: wrap;
     margin: 5px 0 20px;
@@ -97,11 +101,19 @@
     color: #fff;
   }
 
+  .cloud__item input {
+    display: none;
+  }
+
+  .cloud__item input:checked {
+    display: block;
+  }
+
   .cloud--categories .cloud__item::first-letter {
     text-transform: uppercase;
   }
 
-  .cloud--languages .cloud__item,
+  /* .cloud--languages .cloud__item,
   .cloud--countries .cloud__item {
     text-transform: uppercase;
   } */
@@ -120,23 +132,49 @@
 
   <div class="tabs">
     <nav>
-      <button class="heading" on:click={() => setSection(0)}>Categories</button>
-      <button class="heading" on:click={() => setSection(1)}>Languages</button>
-      <button class="heading" on:click={() => setSection(2)}>Countries</button>
+      <label>
+        <input
+          class="heading"
+          type="radio"
+          bind:group={section}
+          value="categories" />
+        Categories
+      </label>
+
+      <label>
+        <input
+          class="heading"
+          type="radio"
+          bind:group={section}
+          value="languages" />
+        Languages
+      </label>
+
+      <label>
+        <input
+          class="heading"
+          type="radio"
+          bind:group={section}
+          value="countries" />
+        Countries
+      </label>
 
       <input type="reset" value="Reset" />
     </nav>
 
     <div>
-      <!-- {#if section === 0}
+      {#if section === 'categories'}
         <div class="cloud cloud--categories">
           {#each categories as category}
-            <p class="cloud__item">{category}</p>
+            <label class="cloud__item" on:click={e => item(e)}>
+              <input type="checkbox" />
+              {category}
+            </label>
           {/each}
         </div>
       {/if}
 
-      {#if section === 1}
+      {#if section === 'languages'}
         <div class="cloud cloud--languages">
           {#each languages as language}
             <p class="cloud__item">{language}</p>
@@ -144,13 +182,13 @@
         </div>
       {/if}
 
-      {#if section === 2}
+      {#if section === 'countries'}
         <div class="cloud cloud--countries">
           {#each countries as country}
             <p class="cloud__item">{country}</p>
           {/each}
         </div>
-      {/if} -->
+      {/if}
     </div>
   </div>
 

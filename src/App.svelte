@@ -8,17 +8,35 @@
   import Background from './components/Background.svelte';
 
   export let url = '';
+
+  const windowSize = () => {
+    const matches = window.matchMedia('(display-mode: standalone)').matches;
+
+    document.body.style.setProperty(
+      '--vh',
+      matches ? '100vh' : `${window.outerHeight}px`
+    );
+  };
+
+  window.addEventListener('DOMContentLoaded', () => {
+    windowSize();
+  });
+
+  window.addEventListener('resize', () => {
+    windowSize();
+  });
 </script>
 
 <style>
   .container {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     min-height: 100vh;
+    min-height: var(--vh);
   }
 
   .header {
-    margin-top: 16px;
+    padding-top: 16px;
   }
 
   .header__inner {
