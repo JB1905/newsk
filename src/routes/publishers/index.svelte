@@ -1,0 +1,31 @@
+<script context="module">
+  import { apiKey } from '../../api/newsapi';
+
+  export async function preload({ params, query }) {
+    const res = await this.fetch(
+      `https://newsapi.org/v2/sources?apiKey=${apiKey}`
+    );
+
+    const data = await res.json();
+
+    if (res.status === 200) {
+      return { publishers: data.sources };
+    } else {
+      this.error(res.status, data.message);
+    }
+  }
+</script>
+
+<script>
+  import Publisher from '../../components/Publisher.svelte';
+
+  export let publishers;
+</script>
+
+<svelte:head>
+  <title>Publishers</title>
+</svelte:head>
+
+{#each publishers as publisher}
+  <Publisher data={publisher} />
+{/each}

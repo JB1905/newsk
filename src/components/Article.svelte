@@ -1,13 +1,10 @@
 <script>
-  import { Link } from 'svelte-routing';
-  import stripHtml from 'string-strip-html';
-
   export let data;
+  export let showSource = true;
 
   const {
     title,
     description,
-    content,
     author,
     url,
     urlToImage,
@@ -18,108 +15,58 @@
   const date = new Date(publishedAt);
 </script>
 
-<style lang="scss">
-  main {
-    border-radius: 2px;
-    overflow: hidden;
-    background-color: #fff;
-    margin-bottom: 20px;
-    border: 1px solid #eee;
-    break-inside: avoid-column;
-  }
-
-  main > div {
-    padding: 8px 16px 16px;
-  }
-
-  .footer {
-    border-top: 1px solid #eee;
-    padding-top: 16px !important;
-  }
-
-  h3,
-  h4 {
-    margin: 8px 0;
-  }
-
-  figure {
-    width: 100%;
-    height: 0;
-    padding-top: calc(100% / 16 * 9);
-    overflow: hidden;
-    position: relative;
+<style>
+  .article:first-of-type {
+    margin-top: 0;
   }
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-  }
-
-  .meta {
-    display: flex;
-    margin: 8px 0;
-  }
-
-  .meta p {
-    margin-left: 10px;
-  }
-
-  a {
-    text-decoration: none;
-    color: #000;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    a {
-      color: #fff;
-    }
-
-    main {
-      background-color: #000;
-      border: 1px solid #666;
-    }
-
-    .footer {
-      border-top: 1px solid #666;
-    }
+    font-size: 0;
   }
 </style>
 
-<main>
-  {#if !!urlToImage}
+<div class="article max-w-sm rounded overflow-hidden shadow-lg mx-auto my-8">
+  {#if urlToImage}
     <a href={url}>
-      <figure>
-        <img src={urlToImage} alt={title} />
-      </figure>
+      <img class="w-full" src={urlToImage} alt={title} />
     </a>
   {/if}
 
-  <div>
+  <div class="px-6 py-4">
     <a href={url}>
-      <h3>{title}</h3>
-
-      {#if !!description}
-        <h4>{stripHtml(description)}</h4>
-      {/if}
+      <div class="font-bold text-xl mb-2">{title}</div>
     </a>
 
-    <div class="meta">
-      <time>{date.getFullYear()}.{date.getMonth()}.{date.getDate()}</time>
-
-      {#if !!author}
-        <p>{author}</p>
-      {/if}
-    </div>
-
-    {#if !!content}
-      <p>{stripHtml(content)}</p>
+    {#if description}
+      <p class="text-gray-700 text-base">
+        {@html description}
+      </p>
     {/if}
   </div>
 
-  <div class="footer">
-    <Link to="/everything?sources={source.name}">{source.name}</Link>
+  <div class="px-6 py-4">
+    <!-- {#if author}
+      <span
+        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm
+        font-semibold text-gray-700 mr-2">
+        {author}
+      </span>
+    {/if} -->
+
+    <span
+      class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm
+      font-semibold text-gray-700 mr-2">
+      {date.getFullYear()}.{date.getMonth()}.{date.getDate()}
+    </span>
+
+    {#if showSource}
+      <a rel="prefetch" href="publishers/{source.name}">
+        <span
+          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm
+          font-semibold text-gray-700">
+          {source.name}
+        </span>
+      </a>
+    {/if}
   </div>
-</main>
+</div>
