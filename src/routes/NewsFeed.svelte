@@ -22,7 +22,7 @@
   });
 </script>
 
-<style>
+<style lang="scss">
   @media (min-width: 600px) {
     main {
       column-gap: 20px;

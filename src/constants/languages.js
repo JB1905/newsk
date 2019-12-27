@@ -13,4 +13,4 @@ export const languages = [
   'se',
   'ud',
   'zh'
-]
+];

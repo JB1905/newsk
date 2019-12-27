@@ -18,7 +18,7 @@
   const date = new Date(publishedAt);
 </script>
 
-<style>
+<style lang="scss">
   main {
     border-radius: 2px;
     overflow: hidden;
@@ -71,6 +71,21 @@
     text-decoration: none;
     color: #000;
   }
+
+  @media (prefers-color-scheme: dark) {
+    a {
+      color: #fff;
+    }
+
+    main {
+      background-color: #000;
+      border: 1px solid #666;
+    }
+
+    .footer {
+      border-top: 1px solid #666;
+    }
+  }
 </style>
 
 <main>
@@ -87,7 +102,7 @@
       <h3>{title}</h3>
 
       {#if !!description}
-        <h4>{description}</h4>
+        <h4>{stripHtml(description)}</h4>
       {/if}
     </a>
 

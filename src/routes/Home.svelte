@@ -7,9 +7,9 @@
 
   let section;
 
-  function setSection(id) {
+  const setSection = id => {
     section = id;
-  }
+  };
 
   const search = () => {
     const route = ['/top-headlines'];
@@ -20,13 +20,9 @@
 
     navigate(route.join(''));
   };
-
-  const item = e => {
-    console.log(e);
-  };
 </script>
 
-<style>
+<style lang="scss">
   .search {
     width: 100%;
     font-size: 20px;
@@ -113,10 +109,16 @@
     text-transform: uppercase;
   }
 
-  /* .cloud--languages .cloud__item,
-  .cloud--countries .cloud__item {
-    text-transform: uppercase;
-  } */
+  @media (prefers-color-scheme: dark) {
+    .search {
+      border: 1px solid #666;
+    }
+
+    .search__field {
+      background-color: #000c;
+      color: #fff;
+    }
+  }
 </style>
 
 <main>
@@ -163,7 +165,7 @@
     </nav>
 
     <div>
-      {#if section === 'categories'}
+      <!-- {#if section === 'categories'}
         <div class="cloud cloud--categories">
           {#each categories as category}
             <label class="cloud__item" on:click={e => item(e)}>
@@ -177,7 +179,10 @@
       {#if section === 'languages'}
         <div class="cloud cloud--languages">
           {#each languages as language}
-            <p class="cloud__item">{language}</p>
+            <label class="cloud__item" on:click={e => item(e)}>
+              <input type="checkbox" />
+              {language}
+            </label>
           {/each}
         </div>
       {/if}
@@ -185,17 +190,13 @@
       {#if section === 'countries'}
         <div class="cloud cloud--countries">
           {#each countries as country}
-            <p class="cloud__item">{country}</p>
+            <label class="cloud__item" on:click={e => item(e)}>
+              <input type="checkbox" />
+              {country}
+            </label>
           {/each}
         </div>
-      {/if}
+      {/if} -->
     </div>
   </div>
-
-  <!-- <select name="type" id="">
-    <option value="" />
-    <option value="top-headlines">Top Headlines</option>
-    <option value="everything">Everything</option>
-    <option value="sources">Publishers</option>
-  </select> -->
 </main>

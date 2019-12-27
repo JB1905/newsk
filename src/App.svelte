@@ -9,12 +9,16 @@
 
   export let url = '';
 
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+
   const windowSize = () => {
     const matches = window.matchMedia('(display-mode: standalone)').matches;
 
     document.body.style.setProperty(
       '--vh',
-      matches ? '100vh' : `${window.outerHeight}px`
+      matches ? '100vh' : `${window.innerHeight}px`
     );
   };
 
@@ -27,9 +31,9 @@
   });
 </script>
 
-<style>
+<style lang="scss">
   .container {
-    /* display: flex; */
+    display: flex;
     flex-direction: column;
     min-height: 100vh;
     min-height: var(--vh);
@@ -72,6 +76,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .header h1 {
+      color: #fff;
+    }
   }
 </style>
 

@@ -12,8 +12,6 @@
 
     const data = await res.json();
 
-    // console.log(data.sources);
-
     sources = data.sources;
   });
 </script>

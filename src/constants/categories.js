@@ -6,4 +6,4 @@ export const categories = [
   'science',
   'sports',
   'technology'
-]
+];

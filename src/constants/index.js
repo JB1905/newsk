@@ -1,3 +1,3 @@
-export { categories } from './categories'
-export { countries } from './countries'
-export { languages } from './languages'
+export { categories } from './categories';
+export { countries } from './countries';
+export { languages } from './languages';
