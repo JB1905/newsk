@@ -1,7 +1,7 @@
 {
   "name": "newsk",
   "version": "1.0.0",
-  "description": "",
+  "description": "News browser with search by category, language, country & more",
   "author": "Jakub Biesiada",
   "license": "MIT",
   "private": true,
