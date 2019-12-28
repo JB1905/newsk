@@ -34,7 +34,8 @@
         bind:value={query}
         class="shadow appearance-none border rounded w-full py-2 px-3
         text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        placeholder="What are you looking for?" />
+        placeholder="What are you looking for?"
+        on:keydown={event => event.code === 'Enter' && search()} />
     </div>
 
     <div class="flex items-center justify-center">

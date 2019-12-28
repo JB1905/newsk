@@ -60,7 +60,7 @@
     </span>
 
     {#if showSource}
-      <a rel="prefetch" href="publishers/{source.name}">
+      <a rel="prefetch" href="publishers/{source.id}">
         <span
           class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm
           font-semibold text-gray-700">

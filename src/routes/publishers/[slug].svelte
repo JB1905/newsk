@@ -17,6 +17,7 @@
 </script>
 
 <script>
+  import SectionTitle from '../../components/SectionTitle.svelte';
   import Masonry from '../../components/Masonry.svelte';
   import Article from '../../components/Article.svelte';
 
@@ -28,7 +29,7 @@
   <title>{title}</title>
 </svelte:head>
 
-<h2 class="text-2xl mb-4 font-medium">Last from: {title}</h2>
+<SectionTitle>Last from: {title}</SectionTitle>
 
 <Masonry>
   {#each articles as article}

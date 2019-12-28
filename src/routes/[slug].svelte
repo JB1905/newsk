@@ -17,6 +17,7 @@
 </script>
 
 <script>
+  import SectionTitle from '../components/SectionTitle.svelte';
   import Masonry from '../components/Masonry.svelte';
   import Article from '../components/Article.svelte';
 
@@ -24,11 +25,7 @@
   export let articles;
 </script>
 
-<style>
-
-</style>
-
-<h2 class="text-2xl mb-4 font-medium">Results for: {query}</h2>
+<SectionTitle>Results for: {query}</SectionTitle>
 
 <Masonry>
   {#each articles as article}

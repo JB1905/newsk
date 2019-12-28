@@ -1,11 +1,13 @@
+<script>
+  export let navigation;
+</script>
+
 <nav class="pb-6">
   <ul class="flex justify-center font-bold text-gray-700">
-    <li class="mx-3">
-      <a rel="prefetch" href="publishers">Publishers</a>
-    </li>
-
-    <li class="mx-3">
-      <a href="https://github.com/JB1905/newsk">About</a>
-    </li>
+    {#each navigation as navigationItem}
+      <li class="mx-3">
+        <a rel="prefetch" href={navigationItem.href}>{navigationItem.title}</a>
+      </li>
+    {/each}
   </ul>
 </nav>
