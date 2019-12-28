@@ -1,10 +1,34 @@
 <script>
+  import { onMount } from 'svelte';
+
   import Nav from '../components/Nav.svelte';
 
   import { navigation } from '../constants/navigation';
+
+  onMount(async () => {
+    const windowSize = () => {
+      const matches = window.matchMedia('(display-mode: standalone)').matches;
+
+      document.body.style.setProperty(
+        '--vh',
+        matches ? '100vh' : `${window.innerHeight}px`
+      );
+    };
+
+    windowSize();
+
+    window.addEventListener('resize', windowSize);
+  });
 </script>
 
-<main class="max-w-sm md:max-w-3xl mx-auto px-4 min-h-screen flex flex-col">
+<style>
+  .page {
+    min-height: 100vh;
+    min-height: var(--vh);
+  }
+</style>
+
+<main class="page max-w-sm md:max-w-3xl mx-auto px-4 flex flex-col">
   <header>
     <a rel="prefetch" href="/">
       <h1 class="text-4xl font-black dark-mode:text-white py-8 text-center">
@@ -15,7 +39,7 @@
     <Nav {navigation} />
   </header>
 
-  <div class="container flex-1 flex flex-col">
+  <div class="flex-1 flex flex-col">
     <slot />
   </div>
 
