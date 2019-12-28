@@ -1,3 +1,7 @@
+:root {
+  --vh: 100vh;
+}
+
 body,
 html {
   font-family: 'Fira Sans', sans-serif;
