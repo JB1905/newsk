@@ -16,8 +16,8 @@
 </script>
 
 <style>
-  .article:first-of-type {
-    margin-top: 0;
+  .article {
+    break-inside: avoid;
   }
 
   img {
@@ -27,7 +27,7 @@
 
 <div
   class="article max-w-sm rounded dark-mode:bg-gray-900 overflow-hidden
-  shadow-lg mx-auto my-8">
+  shadow-lg mx-auto mb-8">
   {#if urlToImage}
     <a href={url}>
       <img class="w-full" src={urlToImage} alt={title} />
