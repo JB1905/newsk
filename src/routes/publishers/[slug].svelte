@@ -17,6 +17,7 @@
 </script>
 
 <script>
+  import Head from '../../components/Head.svelte';
   import SectionTitle from '../../components/SectionTitle.svelte';
   import Masonry from '../../components/Masonry.svelte';
   import Article from '../../components/Article.svelte';
@@ -24,9 +25,7 @@
   export let articles;
 </script>
 
-<svelte:head>
-  <title>{articles[0].source.name}</title>
-</svelte:head>
+<Head routeTitle={articles[0].source.name} />
 
 <SectionTitle>Latest from: {articles[0].source.name}</SectionTitle>
 

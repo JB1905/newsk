@@ -1,10 +1,10 @@
 <script>
+  import Head from '../components/Head.svelte';
+
   const dev = process.env.NODE_ENV === 'development';
 </script>
 
-<svelte:head>
-  <title>Something went wrong!</title>
-</svelte:head>
+<Head routeTitle="Something went wrong!" />
 
 <div
   class="w-full max-w-sm mx-auto px-8 pt-10 pb-10 mb-8 text-center flex flex-col

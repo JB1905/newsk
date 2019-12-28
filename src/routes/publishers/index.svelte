@@ -17,14 +17,13 @@
 </script>
 
 <script>
+  import Head from '../../components/Head.svelte';
   import Publisher from '../../components/Publisher.svelte';
 
   export let publishers;
 </script>
 
-<svelte:head>
-  <title>Publishers</title>
-</svelte:head>
+<Head routeTitle="Publishers" />
 
 {#each publishers as publisher}
   <Publisher data={publisher} />
