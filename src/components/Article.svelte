@@ -25,7 +25,9 @@
   }
 </style>
 
-<div class="article max-w-sm rounded overflow-hidden shadow-lg mx-auto my-8">
+<div
+  class="article max-w-sm rounded dark-mode:bg-gray-900 overflow-hidden
+  shadow-lg mx-auto my-8">
   {#if urlToImage}
     <a href={url}>
       <img class="w-full" src={urlToImage} alt={title} />
@@ -34,11 +36,11 @@
 
   <div class="px-6 py-4">
     <a href={url}>
-      <div class="font-bold text-xl mb-2">{title}</div>
+      <h3 class="font-bold text-xl dark-mode:text-white mb-2">{title}</h3>
     </a>
 
     {#if description}
-      <p class="text-gray-700 text-base">
+      <p class="text-gray-700 dark-mode:text-gray-500 text-base">
         {@html description}
       </p>
     {/if}
@@ -54,16 +56,16 @@
     {/if} -->
 
     <span
-      class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm
-      font-semibold text-gray-700 mr-2">
+      class="inline-block bg-gray-200 dark-mode:bg-gray-800 rounded-full px-3
+      py-1 text-sm font-semibold text-gray-700 dark-mode:text-gray-500 mr-2">
       {date.getFullYear()}.{date.getMonth()}.{date.getDate()}
     </span>
 
     {#if showSource}
       <a rel="prefetch" href="publishers/{source.id}">
         <span
-          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm
-          font-semibold text-gray-700">
+          class="inline-block bg-gray-200 dark-mode:bg-gray-800 rounded-full
+          px-3 py-1 text-sm font-semibold text-gray-700 dark-mode:text-gray-500">
           {source.name}
         </span>
       </a>

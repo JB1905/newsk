@@ -26,19 +26,28 @@
   <title>newsK</title>
 </svelte:head>
 
-<div class="w-full max-w-sm mx-auto">
-  <div class="bg-white shadow-md rounded px-8 pt-10 pb-10 mb-4">
-    <div class="mb-4">
-      <input
+<div
+  class="w-full max-w-sm mx-auto px-8 pt-10 pb-10 mb-8 text-center flex flex-col
+  flex-1 justify-center">
+  <h3 class="text-xl font-bold dark-mode:text-white mb-2">Welcome in newsK</h3>
+
+  <p class="dark-mode:text-gray-500">
+    Easily search for news from around the world and browse between articles in
+    different languages and categories.
+  </p>
+</div>
+
+<!-- <input
         type="text"
         bind:value={query}
         class="shadow appearance-none border rounded w-full py-2 px-3
-        text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        text-gray-700 dark-mode:text-gray-400 dark-mode:border-gray-800
+        dark-mode:bg-gray-900 leading-tight focus:outline-none
+        focus:shadow-outline"
         placeholder="What are you looking for?"
-        on:keydown={event => event.code === 'Enter' && search()} />
-    </div>
+        on:keydown={event => event.code === 'Enter' && search()} /> -->
 
-    <div class="flex items-center justify-center">
+<!-- <div class="flex items-center justify-center">
       <button
         type="submit"
         class="bg-gray-700 hover:bg-gray-900 text-white font-bold py-2 px-4
@@ -46,9 +55,9 @@
         on:click={search}>
         Search
       </button>
-    </div>
+    </div> -->
 
-    <!-- <div class="tabs">
+<!-- <div class="tabs">
       <nav>
         <label>
           <input
@@ -115,5 +124,3 @@
         {/if}
       </div>
     </div> -->
-  </div>
-</div>
