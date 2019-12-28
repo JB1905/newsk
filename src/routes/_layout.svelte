@@ -4,19 +4,7 @@
   import { navigation } from '../constants/navigation';
 </script>
 
-<style>
-  .container {
-    max-width: 24rem;
-  }
-
-  @media (min-width: 780px) {
-    .container {
-      max-width: 780px;
-    }
-  }
-</style>
-
-<main class="container mx-auto px-4 min-h-screen flex flex-col">
+<main class="max-w-sm md:max-w-3xl mx-auto px-4 min-h-screen flex flex-col">
   <header>
     <a rel="prefetch" href="/">
       <h1 class="text-4xl font-black dark-mode:text-white py-8 text-center">

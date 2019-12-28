@@ -21,15 +21,14 @@
   import Masonry from '../../components/Masonry.svelte';
   import Article from '../../components/Article.svelte';
 
-  export let title;
   export let articles;
 </script>
 
 <svelte:head>
-  <title>{title}</title>
+  <title>{articles[0].source.name}</title>
 </svelte:head>
 
-<SectionTitle>Last from: {title}</SectionTitle>
+<SectionTitle>Latest from: {articles[0].source.name}</SectionTitle>
 
 <Masonry>
   {#each articles as article}
