@@ -6,7 +6,7 @@
   import { navigation } from '../constants/navigation';
 
   onMount(async () => {
-    const windowSize = () => {
+    const setWindowSize = () => {
       const matches = window.matchMedia('(display-mode: standalone)').matches;
 
       document.body.style.setProperty(
@@ -15,9 +15,9 @@
       );
     };
 
-    windowSize();
+    setWindowSize();
 
-    window.addEventListener('resize', windowSize);
+    window.addEventListener('resize', setWindowSize);
   });
 </script>
 
