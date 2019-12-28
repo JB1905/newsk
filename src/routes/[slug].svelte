@@ -1,5 +1,5 @@
 <script context="module">
-  import { apiKey } from '../api/newsapi';
+  import { apiKey } from '../config/newsapi';
 
   export async function preload({ params, query }) {
     const res = await this.fetch(
