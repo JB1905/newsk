@@ -1,4 +1,7 @@
 <script>
+  export let status;
+  export let error;
+
   import Head from '../components/Head.svelte';
 
   const dev = process.env.NODE_ENV === 'development';
@@ -13,3 +16,8 @@
 
   <p class="dark-mode:text-gray-500">Something went wrong</p>
 </div>
+
+{#if dev && error.stack}
+  <h4>{status}</h4>
+  <pre>{error.stack}</pre>
+{/if}
