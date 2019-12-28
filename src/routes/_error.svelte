@@ -1,7 +1,4 @@
 <script>
-  // export let status;
-  // export let error;
-
   const dev = process.env.NODE_ENV === 'development';
 </script>
 
@@ -14,5 +11,5 @@
   flex-1 justify-center">
   <h3 class="text-5xl text-center font-bold dark-mode:text-white">Ooops!!!</h3>
 
-  <p>Something went wrong</p>
+  <p class="dark-mode:text-gray-500">Something went wrong</p>
 </div>
