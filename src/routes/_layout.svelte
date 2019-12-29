@@ -3,7 +3,7 @@
 
   import Nav from '../components/Nav.svelte';
 
-  import { navigation } from '../constants/navigation';
+  import { navigation } from '../constants';
 
   onMount(async () => {
     const setWindowSize = () => {
