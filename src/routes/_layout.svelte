@@ -7,7 +7,7 @@
 
   onMount(async () => {
     const setWindowSize = () => {
-      const matches = window.matchMedia('(display-mode: standalone)').matches;
+      const { matches } = window.matchMedia('(display-mode: standalone)');
 
       document.body.style.setProperty(
         '--vh',
