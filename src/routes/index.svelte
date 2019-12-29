@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { goto } from '@sapper/app';
 
   import Head from '../components/Head.svelte';
