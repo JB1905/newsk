@@ -18,6 +18,8 @@
 <style>
   .article {
     break-inside: avoid;
+    display: inline-block;
+    position: relative;
   }
 
   img {
