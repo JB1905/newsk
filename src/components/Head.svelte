@@ -1,5 +1,5 @@
 <script>
-  export let routeTitle;
+  export let routeTitle = '';
 
   const title = `newsK${routeTitle ? ` | ${routeTitle}` : ''}`;
 </script>
