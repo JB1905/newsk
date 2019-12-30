@@ -19,6 +19,12 @@ html {
   padding-bottom: env(safe-area-inset-bottom);
 }
 
+@screen dark-mode {
+  img {
+    filter: grayscale(50%);
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
