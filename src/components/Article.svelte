@@ -13,6 +13,10 @@
   } = data;
 
   const date = new Date(publishedAt);
+
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
 </script>
 
 <style>
@@ -52,8 +56,16 @@
     <span
       class="inline-block bg-gray-200 dark-mode:bg-gray-800 rounded-full px-3
       py-1 text-sm font-semibold text-gray-700 dark-mode:text-gray-500 mr-2">
-      {date.getFullYear()}.{date.getMonth()}.{date.getDate()}
+      {year}.{month > 9 ? month : `0${month}`}.{day > 9 ? day : `0${day}`}
     </span>
+
+    {#if author}
+      <span
+        class="inline-block bg-gray-200 dark-mode:bg-gray-800 rounded-full px-3
+        py-1 text-sm font-semibold text-gray-700 dark-mode:text-gray-500 mr-2">
+        {author}
+      </span>
+    {/if}
 
     {#if showSource}
       <a rel="prefetch" href="publishers/{source.id}">
