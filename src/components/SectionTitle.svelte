@@ -1,3 +1,3 @@
-<h2 class="text-2xl mb-4 font-medium dark-mode:text-white">
+<h2 class="text-2xl my-4 font-medium dark-mode:text-white">
   <slot />
 </h2>

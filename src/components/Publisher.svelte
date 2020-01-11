@@ -4,6 +4,14 @@
   const { id, name, description } = data;
 </script>
 
+<style>
+  .publisher {
+    break-inside: avoid;
+    display: inline-block;
+    position: relative;
+  }
+</style>
+
 <div
   class="publisher max-w-sm rounded dark-mode:bg-gray-900 overflow-hidden
   shadow-lg mx-auto my-4">
