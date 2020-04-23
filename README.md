@@ -22,8 +22,8 @@ cd newsk
 - Rename `.env.example` to `.env.local`
 
 ##### 5. Run
-`yarn dev` or `npm run dev` for project
-`yarn watch:tailwind` or `npm run watch:tailwind` for Tailwind CSS
+- `yarn dev` or `npm run dev` for project
+- `yarn watch:tailwind` or `npm run watch:tailwind` for Tailwind CSS
 
 ## License
 This project is licensed under the MIT License © 2020-present Jakub Biesiada
