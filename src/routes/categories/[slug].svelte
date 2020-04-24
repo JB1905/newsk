@@ -3,13 +3,16 @@
 
   export async function preload({ params, query }) {
     const res = await this.fetch(
-      `https://newsapi.org/v2/top-headlines?sources=${params.slug}&apiKey=${apiKey}`
+      `https://newsapi.org/v2/top-headlines?category=${params.slug}&apiKey=${apiKey}`
     );
 
     const data = await res.json();
 
     if (res.status === 200) {
-      return { title: params.slug, articles: data.articles };
+      return {
+        title: `${params.slug[0].toUpperCase()}${params.slug.slice(1)}`,
+        articles: data.articles
+      };
     } else {
       this.error(res.status, data.message);
     }
@@ -22,17 +25,16 @@
   import Masonry from '../../components/Masonry.svelte';
   import Article from '../../components/Article.svelte';
 
+  export let title;
   export let articles;
 </script>
 
-<Head routeTitle={articles[0].source.name} />
+<Head routeTitle={title} />
 
-<SectionTitle>Latest from: {articles[0].source.name}</SectionTitle>
+<SectionTitle>Latest for category: {title}</SectionTitle>
 
-<div />
-
-<!-- <Masonry> -->
-{#each articles as article}
-  <Article data={article} showSource={false} />
-{/each}
-<!-- </Masonry> -->
+<Masonry>
+  {#each articles as article}
+    <Article data={article} showSource={false} />
+  {/each}
+</Masonry>

@@ -12,6 +12,6 @@ express()
     sirv('static', { dev }),
     sapper.middleware()
   )
-  .listen(PORT, err => {
+  .listen(PORT, (err) => {
     if (err) console.log('error', err);
   });

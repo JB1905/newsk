@@ -3,7 +3,7 @@
 
   export async function preload({ params, query }) {
     const res = await this.fetch(
-      `https://newsapi.org/v2/top-headlines?sources=${params.slug}&apiKey=${apiKey}`
+      `https://newsapi.org/v2/top-headlines?country=${params.slug}&apiKey=${apiKey}`
     );
 
     const data = await res.json();
@@ -28,8 +28,6 @@
 <Head routeTitle={articles[0].source.name} />
 
 <SectionTitle>Latest from: {articles[0].source.name}</SectionTitle>
-
-<div />
 
 <!-- <Masonry> -->
 {#each articles as article}

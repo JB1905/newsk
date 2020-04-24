@@ -5,6 +5,12 @@
       column-count: 2;
     }
   }
+
+  /* @media (min-width: 1024px) {
+    .masonry {
+      column-count: 3;
+    }
+  } */
 </style>
 
 <div class="masonry align-top mx-auto">

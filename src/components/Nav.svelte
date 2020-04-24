@@ -2,7 +2,7 @@
   export let navigation;
 </script>
 
-<nav class="pb-6">
+<nav class="pb-6 md:pb-0">
   <ul
     class="flex justify-center font-bold text-gray-700 dark-mode:text-gray-500">
     {#each navigation as navigationItem}

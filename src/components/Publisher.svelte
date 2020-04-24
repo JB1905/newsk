@@ -4,18 +4,10 @@
   const { id, name, description } = data;
 </script>
 
-<style>
-  .publisher {
-    break-inside: avoid;
-    display: inline-block;
-    position: relative;
-  }
-</style>
-
 <div
-  class="publisher max-w-sm rounded dark-mode:bg-gray-900 overflow-hidden
-  shadow-lg mx-auto my-4">
-  <div class="px-6 py-4">
+  class="publisher w-full overflow-hidden mx-auto border-b border-gray-400
+  dark-mode:border-gray-600">
+  <div class="px-0 py-5">
     <a href="publishers/{id}">
       <h3 class="font-bold text-xl dark-mode:text-white mb-2">{name}</h3>
     </a>

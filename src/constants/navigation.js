@@ -1,4 +1,12 @@
 export const navigation = [
+  // {
+  //   title: 'Countries',
+  //   href: 'countries'
+  // },
+  {
+    title: 'Categories',
+    href: 'categories'
+  },
   {
     title: 'Publishers',
     href: 'publishers'

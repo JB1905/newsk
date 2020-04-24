@@ -20,11 +20,11 @@
 </script>
 
 <style>
-  .article {
+  /* .article {
     break-inside: avoid;
     display: inline-block;
     position: relative;
-  }
+  } */
 
   img {
     font-size: 0;
@@ -32,15 +32,15 @@
 </style>
 
 <div
-  class="article max-w-sm rounded dark-mode:bg-gray-900 overflow-hidden
-  shadow-lg mx-auto mb-8">
+  class="article w-full rounded-lg bg-white dark-mode:bg-gray-900
+  overflow-hidden shadow mx-auto mb-4">
   {#if urlToImage}
     <a href={url}>
       <img class="w-full" src={urlToImage} alt={title} />
     </a>
   {/if}
 
-  <div class="px-6 py-4">
+  <div class="px-4 py-4">
     <a href={url}>
       <h3 class="font-bold text-xl dark-mode:text-white mb-2">{title}</h3>
     </a>
@@ -52,7 +52,7 @@
     {/if}
   </div>
 
-  <div class="px-6 py-4">
+  <div class="px-4 py-4">
     <span
       class="inline-block bg-gray-200 dark-mode:bg-gray-800 rounded-full px-3
       py-1 text-sm font-semibold text-gray-700 dark-mode:text-gray-500 mr-2">

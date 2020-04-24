@@ -18,6 +18,7 @@
 
 <script>
   import Head from '../../components/Head.svelte';
+  import Masonry from '../../components/Masonry.svelte';
   import Publisher from '../../components/Publisher.svelte';
 
   export let publishers;
@@ -25,6 +26,8 @@
 
 <Head routeTitle="Publishers" />
 
-{#each publishers as publisher}
+<!-- <Masonry> -->
+{#each publishers as publisher, index}
   <Publisher data={publisher} />
 {/each}
+<!-- </Masonry> -->
