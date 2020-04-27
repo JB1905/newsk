@@ -23,11 +23,11 @@
 
 <main class="page m-auto flex flex-col">
   <header
-    class="top-0 sticky z-20 md:flex bg-white dark-mode:bg-gray-900 flex
-    flex-col items-center shadow-sm overflow-hidden {isSearchFormShow ? 'h-screen' : ''}">
+    class="top-0 sticky z-20 flex bg-white dark-mode:bg-gray-900 flex-col
+    items-center shadow-sm overflow-hidden {isSearchFormShow ? 'h-screen' : ''}">
 
     <div class="max-w-xl w-full">
-      <div class="h-16 flex items-center justify-between">
+      <div class="h-16 flex md:flex-row-reverse items-center justify-between">
         <button
           class="mx-2 text-gray-700 dark-mode:text-gray-400 hover:color-gray-400
           font-bold py-2 px-4 inline-flex items-center"

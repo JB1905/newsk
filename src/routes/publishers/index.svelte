@@ -25,6 +25,6 @@
 
 <Head routeTitle="Publishers" />
 
-{#each publishers as publisher, index}
+{#each publishers as publisher}
   <Publisher data={publisher} />
 {/each}
