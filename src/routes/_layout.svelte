@@ -1,49 +1,74 @@
 <script>
-  import { onMount } from 'svelte';
+  import SearchForm from '../containers/SearchForm.svelte';
 
   import Nav from '../components/Nav.svelte';
 
   import { navigation } from '../constants';
 
-  onMount(async () => {
-    const setWindowSize = () => {
-      const { matches } = window.matchMedia('(display-mode: standalone)');
+  import FaSearch from 'svelte-icons/fa/FaSearch.svelte';
+  import FaBars from 'svelte-icons/fa/FaBars.svelte';
 
-      document.body.style.setProperty(
-        '--vh',
-        matches ? '100vh' : `${window.innerHeight}px`
-      );
-    };
+  let isMenuShow = false;
 
-    setWindowSize();
+  function toggleMenu() {
+    isMenuShow = !isMenuShow;
+  }
 
-    window.addEventListener('resize', setWindowSize);
-  });
+  let isSearchFormShow = false;
+
+  function toggleSearchForm() {
+    isSearchFormShow = !isSearchFormShow;
+  }
 </script>
 
-<style>
-  .page {
-    min-height: 100vh;
-    min-height: var(--vh);
-  }
-</style>
+<main class="page m-auto flex flex-col">
+  <header
+    class="top-0 sticky z-20 md:flex bg-white dark-mode:bg-gray-900 flex
+    flex-col items-center shadow-sm overflow-hidden {isSearchFormShow ? 'h-screen' : 'h-16'}">
 
-<main class="page max-w-sm md:max-w-3xl mx-auto px-4 flex flex-col">
-  <header>
-    <a rel="prefetch" href="/">
-      <h1 class="text-4xl font-black dark-mode:text-white py-8 text-center">
-        newsK
-      </h1>
-    </a>
+    <div class="max-w-xl w-full">
+      <div class="h-16 flex justify-between">
+        <button
+          class="mx-2 text-gray-700 dark-mode:text-gray-400 hover:color-gray-400
+          font-bold py-2 px-4 inline-flex items-center"
+          on:click={toggleMenu}>
+          <div class="w-5">
+            <FaBars />
+          </div>
+        </button>
 
-    <Nav {navigation} />
+        <a rel="prefetch" href="/">
+          <h1
+            class="text-3xl font-title font-black dark-mode:text-white pt-2 pb-2
+            text-center">
+            newsK
+          </h1>
+        </a>
+
+        <button
+          class="mx-2 text-gray-700 dark-mode:text-gray-400 hover:color-gray-400
+          font-bold py-2 px-4 inline-flex items-center"
+          on:click={toggleSearchForm}>
+          <div class="w-5">
+            <FaSearch />
+          </div>
+        </button>
+      </div>
+
+      <!-- <SearchForm /> -->
+    </div>
+
+    <!-- {#if isMenuShow}
+      <Nav {navigation} />
+    {/if} -->
+
   </header>
 
-  <div class="flex-1 flex flex-col">
+  <div class="flex-1 z-10 px-4 flex max-w-xl w-full mx-auto flex-col">
     <slot />
   </div>
 
-  <footer class="py-8 text-center">
+  <footer class="px-4 py-6 text-center">
     <a
       href="https://newsapi.org/"
       class="text-lg font-bold text-gray-800 dark-mode:text-gray-500">

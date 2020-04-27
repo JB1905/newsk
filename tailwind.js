@@ -5,26 +5,30 @@ module.exports = {
       md: '768px',
       lg: '1024px',
       xl: '1280px',
-      'dark-mode': { raw: '(prefers-color-scheme: dark)' }
+      'dark-mode': { raw: '(prefers-color-scheme: dark)' },
     },
     fontFamily: {
-      display: ['Gilroy', 'sans-serif'],
-      body: ['Graphik', 'sans-serif']
+      title: ['Headland One', 'serif'],
+      body: ['Fira Sans', 'sans-serif'],
     },
-    borderWidth: {
-      default: '1px',
-      '0': '0',
-      '2': '2px',
-      '4': '4px'
-    },
+    // borderWidth: {
+    //   default: '1px',
+    //   '0': '0',
+    //   '2': '2px',
+    //   '4': '4px',
+    // },
     extend: {
       colors: {
-        cyan: '#9cdbff'
+        primary: '',
+        secondary: '',
+        background: '',
+        // text: '#000',
+        // card: '#fff',
       },
-      spacing: {
-        '96': '24rem',
-        '128': '32rem'
-      }
-    }
-  }
+      // spacing: {
+      //   '96': '24rem',
+      //   '128': '32rem',
+      // },
+    },
+  },
 };
