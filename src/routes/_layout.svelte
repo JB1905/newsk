@@ -32,7 +32,7 @@
           class="mx-2 text-gray-700 dark-mode:text-gray-400 hover:color-gray-400
           font-bold py-2 px-4 inline-flex items-center"
           on:click={toggleMenu}>
-          <div class="w-5">
+          <div class="w-5 flex">
             <FaBars />
           </div>
         </button>
@@ -49,7 +49,7 @@
           class="mx-2 text-gray-700 dark-mode:text-gray-400 hover:color-gray-400
           font-bold py-2 px-4 inline-flex items-center"
           on:click={toggleSearchForm}>
-          <div class="w-5">
+          <div class="w-5 flex">
             <FaSearch />
           </div>
         </button>
