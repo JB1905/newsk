@@ -1,4 +1,6 @@
 <script>
+  import td from 'two-digit';
+
   export let data;
   export let showSource = true;
 
@@ -19,24 +21,12 @@
   const day = date.getDate();
 </script>
 
-<style>
-  /* .article {
-    break-inside: avoid;
-    display: inline-block;
-    position: relative;
-  } */
-
-  img {
-    font-size: 0;
-  }
-</style>
-
 <div
   class="article w-full rounded-lg bg-white dark-mode:bg-gray-900
   overflow-hidden shadow mx-auto mb-4">
   {#if urlToImage}
     <a href={url}>
-      <img class="w-full" src={urlToImage} alt={title} />
+      <img class="w-full" src={urlToImage} alt={title} loading="lazy" />
     </a>
   {/if}
 
@@ -56,7 +46,7 @@
     <span
       class="inline-block bg-gray-200 dark-mode:bg-gray-800 rounded-full px-3
       py-1 text-sm font-semibold text-gray-700 dark-mode:text-gray-500 mr-2">
-      {year}.{month > 9 ? month : `0${month}`}.{day > 9 ? day : `0${day}`}
+      {year}.{td(month)}.{td(day)}
     </span>
 
     {#if author}

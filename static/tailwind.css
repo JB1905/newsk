@@ -1,7 +1,3 @@
-:root {
-  --vh: 100vh;
-}
-
 body,
 html {
   font-family: 'Fira Sans', sans-serif;
@@ -15,12 +11,20 @@ html {
 }
 
 .page {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
+
+  @media (display-mode: standalone) {
+    min-height: 100vh;
+  }
 }
 
-@screen dark-mode {
-  img {
+img {
+  font-size: 0;
+
+  @screen dark-mode {
     filter: grayscale(50%);
   }
 }

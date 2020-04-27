@@ -23,7 +23,8 @@
     "express": "^4.17.1",
     "sapper-environment": "^1.0.1",
     "sirv": "^0.4.2",
-    "svelte-icons": "^2.1.0"
+    "svelte-icons": "^2.1.0",
+    "two-digit": "^1.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
