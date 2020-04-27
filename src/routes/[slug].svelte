@@ -29,6 +29,7 @@
   import SectionTitle from '../components/SectionTitle.svelte';
   import Masonry from '../components/Masonry.svelte';
   import Article from '../components/Article.svelte';
+  import LoadMore from '../components/LoadMore.svelte';
 
   export let query;
   export let articles;
@@ -42,11 +43,4 @@
   <Article data={article} />
 {/each}
 
-<button
-  class="bg-white dark-mode:bg-gray-900 hover:bg-gray-100
-  dark-mode:hover:bg-gray-800 text-gray-800 dark-mode:text-gray-400
-  font-semibold py-2 px-4 border border-gray-200 dark-mode:border-gray-800
-  rounded-lg shadow"
-  on:click>
-  Load More
-</button>
+<LoadMore />
