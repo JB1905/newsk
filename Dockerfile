@@ -8,4 +8,4 @@ RUN npm install
 
 COPY . /app
 
-CMD npm run watch:tailwind && npm run dev
+CMD npm run dev && npm run watch:tailwind
