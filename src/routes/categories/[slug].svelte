@@ -1,6 +1,4 @@
 <script context="module">
-  // import FaStar from 'svelte-icons/fa/FaStar.svelte';
-
   import { apiKey } from '../../config/newsapi';
 
   export async function preload({ params }) {
@@ -24,7 +22,6 @@
 <script>
   import Head from '../../components/Head.svelte';
   import SectionTitle from '../../components/SectionTitle.svelte';
-  import Masonry from '../../components/Masonry.svelte';
   import Article from '../../components/Article.svelte';
   import LoadMore from '../../components/LoadMore.svelte';
 
@@ -41,10 +38,3 @@
 {/each}
 
 <LoadMore />
-
-<!-- 
-<button
-  class="bg-pink-800 text-white font-bold py-2 px-4 rounded-full fixed w-10 h-10
-  b-2 r-2 shadow-md">
-  <FaStar />
-</button> -->

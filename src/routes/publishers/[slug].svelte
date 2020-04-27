@@ -19,7 +19,6 @@
 <script>
   import Head from '../../components/Head.svelte';
   import SectionTitle from '../../components/SectionTitle.svelte';
-  import Masonry from '../../components/Masonry.svelte';
   import Article from '../../components/Article.svelte';
   import LoadMore from '../../components/LoadMore.svelte';
 

@@ -18,7 +18,6 @@
 
 <script>
   import Head from '../../components/Head.svelte';
-  import Masonry from '../../components/Masonry.svelte';
   import Publisher from '../../components/Publisher.svelte';
 
   export let publishers;

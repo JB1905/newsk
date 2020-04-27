@@ -1,18 +1,14 @@
 export const navigation = [
-  // {
-  //   title: 'Countries',
-  //   href: 'countries'
-  // },
   {
     title: 'Categories',
-    href: 'categories'
+    href: 'categories',
   },
   {
     title: 'Publishers',
-    href: 'publishers'
+    href: 'publishers',
   },
   {
     title: 'About',
-    href: 'https://github.com/JB1905/newsk'
-  }
+    href: 'https://github.com/JB1905/newsk',
+  },
 ];
