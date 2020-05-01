@@ -1,10 +1,13 @@
 # newsK
 
 ## About
-News browser with search by category, language, country & more
+Svelte news browser
 
 ##### Main Features
-**TBA**
+- search articles by category, language, country & more
+- display articles from different sources
+- display favorite sources on home page
+- add to home screen (PWA support)
 
 [Open newsK](https://newsk.netlify.app/)
 
