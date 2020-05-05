@@ -11,8 +11,6 @@ Svelte news browser
 
 [Open newsK](https://newsk.netlify.app/)
 
-## Prerequisites
-
 ## Setup
 ##### 1. Clone repo
 ```
@@ -36,14 +34,13 @@ cd newsk
 - `yarn watch:tailwind` or `npm run watch:tailwind` for Tailwind CSS
 
 ## Build with
-- Svelte
-- Sapper
-- Tailwind CSS
-- Jest
-- Cypress
-- Netlify
-- Docker
-- News API
+- [Svelte](https://svelte.dev/)
+- [Sapper](https://sapper.svelte.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Cypress](https://www.cypress.io/)
+- [Netlify](https://www.netlify.com/)
+- [Docker](https://www.docker.com/)
+- [News API](https://newsapi.org/)
 
 ## License
 This project is licensed under the MIT License © 2020-present Jakub Biesiada
