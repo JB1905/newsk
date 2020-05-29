@@ -20,7 +20,6 @@
   import Head from '../../components/Head.svelte';
   import SectionTitle from '../../components/SectionTitle.svelte';
   import Article from '../../components/Article.svelte';
-  import LoadMore from '../../components/LoadMore.svelte';
 
   export let articles;
 </script>
@@ -33,4 +32,4 @@
   <Article data={article} showSource={false} />
 {/each}
 
-<LoadMore />
+<!-- <LoadMore /> -->

@@ -24,13 +24,12 @@
 <main class="page m-auto flex flex-col">
   <header
     class="top-0 sticky z-20 flex bg-white dark-mode:bg-gray-900 flex-col
-    items-center shadow-sm overflow-hidden {isSearchFormShow ? 'h-screen' : ''}">
-
+    items-center shadow-sm">
     <div class="max-w-xl w-full">
-      <div class="h-16 flex md:flex-row-reverse items-center justify-between">
+      <div class="h-16 flex items-center justify-between">
         <button
           class="mx-2 text-gray-700 dark-mode:text-gray-400 hover:color-gray-400
-          font-bold py-2 px-4 inline-flex items-center"
+          font-bold p-4 inline-flex items-center"
           on:click={toggleMenu}>
           <div class="w-5 flex">
             <FaBars />
@@ -47,7 +46,7 @@
 
         <button
           class="mx-2 text-gray-700 dark-mode:text-gray-400 hover:color-gray-400
-          font-bold py-2 px-4 inline-flex items-center"
+          font-bold p-4 inline-flex items-center"
           on:click={toggleSearchForm}>
           <div class="w-5 flex">
             <FaSearch />
@@ -55,14 +54,15 @@
         </button>
       </div>
 
-      <!-- <SearchForm /> -->
+      {#if isMenuShow}
+        <Nav {navigation} />
+      {/if}
     </div>
-
-    <!-- {#if isMenuShow}
-      <Nav {navigation} />
-    {/if} -->
-
   </header>
+
+  {#if isSearchFormShow}
+    <SearchForm />
+  {/if}
 
   <div class="flex-1 z-10 px-4 flex max-w-xl w-full mx-auto flex-col">
     <slot />

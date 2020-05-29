@@ -52,5 +52,5 @@ export const countries = {
   ua: 'Ukraine',
   gb: 'United Kingdom',
   us: 'United States',
-  ve: 'Venezuela'
+  ve: 'Venezuela',
 };

@@ -1,5 +1,7 @@
 <script>
   import Head from '../components/Head.svelte';
+
+  // import { favorite } from '../store.js';
 </script>
 
 <Head />
