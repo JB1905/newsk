@@ -46,7 +46,6 @@ cd newsk
 - [Svelte](https://svelte.dev/)
 - [Sapper](https://sapper.svelte.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
-<!-- - [Jest](https://jestjs.io/) -->
 - [Cypress](https://www.cypress.io/)
 - [Netlify](https://www.netlify.com/)
 - [Docker](https://www.docker.com/)
