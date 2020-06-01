@@ -29,6 +29,13 @@ cd newsk
 
 ##### 3. Install dependencies
 
+```sh
+npm i
+
+# Or, use yarn
+yarn
+```
+
 `yarn` or `npm i`
 
 ##### 4. Set environment variables
@@ -38,8 +45,23 @@ cd newsk
 
 ##### 5. Run
 
-- `yarn dev` or `npm run dev` for project
-- `yarn watch:tailwind` or `npm run watch:tailwind` for Tailwind CSS
+- Project:
+
+```sh
+npm run dev
+
+# Or, use yarn
+yarn dev
+```
+
+- Tailwind CSS:
+
+```sh
+npm run watch:tailwind
+
+# Or, use yarn
+yarn watch:tailwind
+```
 
 ## Build with
 
