@@ -36,8 +36,6 @@ npm i
 yarn
 ```
 
-`yarn` or `npm i`
-
 ##### 4. Set environment variables
 
 - Edit `.env.example` file
