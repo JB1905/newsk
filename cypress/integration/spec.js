@@ -1,19 +1,15 @@
-describe('Sapper template app', () => {
+describe('Newsk', () => {
   beforeEach(() => {
     cy.visit('/');
   });
 
-  it('has the correct <h1>', () => {
-    cy.contains('h1', 'Great success!');
+  it('', () => {
+    // cy.get('button[name="toggle-menu"]').click();
   });
 
-  it('navigates to /about', () => {
-    cy.get('nav a').contains('about').click();
-    cy.url().should('include', '/about');
-  });
+  it('', () => {
+    cy.get('button[name="toggle-search-form"]').click();
 
-  it('navigates to /blog', () => {
-    cy.get('nav a').contains('blog').click();
-    cy.url().should('include', '/blog');
+    cy.get('input[type="search"]').type('Apple{enter}');
   });
 });

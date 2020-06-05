@@ -11,24 +11,14 @@ module.exports = {
       title: ['Headland One', 'serif'],
       body: ['Fira Sans', 'sans-serif'],
     },
-    // borderWidth: {
-    //   default: '1px',
-    //   '0': '0',
-    //   '2': '2px',
-    //   '4': '4px',
-    // },
     extend: {
       colors: {
-        primary: '',
-        secondary: '',
-        background: '',
+        // primary: '',
+        // secondary: '',
+        // background: '',
         // text: '#000',
         // card: '#fff',
       },
-      // spacing: {
-      //   '96': '24rem',
-      //   '128': '32rem',
-      // },
     },
   },
 };

@@ -16,8 +16,8 @@
 </script>
 
 <div
-  class="fixed bg-black bg-opacity-75 w-full h-full z-20 flex items-center
-  justify-center">
+  class="fixed bg-gray-200 dark-mode:bg-black bg-opacity-75 w-full h-full z-20
+  flex items-center justify-center">
 
   <div
     class="overflow-scroll border-t dark-mode:border-gray-800 h-full md:h-64

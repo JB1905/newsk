@@ -30,6 +30,7 @@
         <button
           class="mx-2 text-gray-700 dark-mode:text-gray-400 hover:color-gray-400
           font-bold p-4 inline-flex items-center"
+          name="toggle-menu"
           on:click={toggleMenu}>
           <div class="w-5 flex">
             <FaBars />
@@ -47,6 +48,7 @@
         <button
           class="mx-2 text-gray-700 dark-mode:text-gray-400 hover:color-gray-400
           font-bold p-4 inline-flex items-center"
+          name="toggle-search-form"
           on:click={toggleSearchForm}>
           <div class="w-5 flex">
             <FaSearch />
