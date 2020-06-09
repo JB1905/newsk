@@ -1,23 +1,28 @@
 <script>
-  import { goto } from '@sapper/app';
+  import { goto } from "@sapper/app";
 
-  import { countries } from '../constants/countries';
-  import { categories } from '../constants/categories';
+  import { countries } from "../constants/countries";
+  import { categories } from "../constants/categories";
 
-  let dataType = 'top-headlines';
+  import { isFeatureEnabled } from "../../features";
 
-  let search = '';
+  let dataType = "top-headlines";
+
+  let search = "";
 
   const formSubmit = event => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       goto(`top-headlines?q=${search}`);
     }
   };
 </script>
 
+{#if isFeatureEnabled("advancedSearch")}
 <div
   class="fixed bg-gray-200 dark-mode:bg-black bg-opacity-75 w-full h-full z-20
-  flex items-center justify-center">
+  flex items-center justify-center flex-col md:backdrop-blur">
+
+  <button>Close</button>
 
   <div
     class="overflow-scroll border-t dark-mode:border-gray-800 h-full md:h-64
@@ -94,11 +99,6 @@
             </label>
           {/each}
         </div>
-
-        <!-- <div class="py-2"> -->
-        <!-- <h3 class="text-xl py-2 font-bold">Sources</h3> -->
-
-        <!-- </div> -->
       {:else if dataType === 'everything'}
         <div class="py-2">
           <h3 class="text-xl py-2 font-bold">Sources</h3>
@@ -148,12 +148,4 @@
     </div>
   </div>
 </div>
-
-<!-- 
-<div class="p-4 border-t border-gray-300">
-  <button
-    class="bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded
-    w-full">
-    Search
-  </button>
-</div> -->
+{/if}

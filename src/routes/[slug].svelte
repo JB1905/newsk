@@ -1,10 +1,10 @@
 <script context="module">
-  import { apiKey } from '../config/newsapi';
+  import { apiKey } from "../config/newsapi";
 
   export async function preload({ params, query }) {
     const queryParams = Object.entries(query)
       .map(([key, value]) => `${key}=${value}`)
-      .join('&');
+      .join("&");
 
     const res = await this.fetch(
       `https://newsapi.org/v2/${params.slug}?q=${query.q}&${queryParams}&apiKey=${apiKey}`
@@ -42,7 +42,3 @@
 {#each articles as article}
   <Article data={article} />
 {/each}
-
-<!-- {#if total / 10 > 1}
-  <Pagination />
-{/if} -->

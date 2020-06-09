@@ -1,12 +1,14 @@
 <script>
-  import SearchForm from '../containers/SearchForm.svelte';
+  import SearchForm from "../containers/SearchForm.svelte";
 
-  import Nav from '../components/Nav.svelte';
+  import Nav from "../components/Nav.svelte";
 
-  import { navigation } from '../constants';
+  import { navigation } from "../constants";
 
-  import FaSearch from 'svelte-icons/fa/FaSearch.svelte';
-  import FaBars from 'svelte-icons/fa/FaBars.svelte';
+  import FaSearch from "svelte-icons/fa/FaSearch.svelte";
+  import FaBars from "svelte-icons/fa/FaBars.svelte";
+
+  import { isFeatureEnabled } from "../../features";
 
   let isMenuShow = false;
 
@@ -56,7 +58,7 @@
         </button>
       </div>
 
-      {#if isMenuShow}
+      {#if isMenuShow && isFeatureEnabled("menu")}
         <Nav {navigation} />
       {/if}
     </div>

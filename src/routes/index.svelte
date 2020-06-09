@@ -1,20 +1,20 @@
 <script>
-  import Head from '../components/Head.svelte';
+  import Head from "../components/Head.svelte";
 
-  import { favorite } from '../store.js';
+  import { favorite } from "../store.js";
+
+  import { isFeatureEnabled } from "../../features";
 
   let fav = null;
 
   favorite.subscribe(item => {
     fav = item;
   });
-
-  // console.log(fav);
 </script>
 
 <Head />
 
-{#if fav.length > 0}
+{#if fav.length > 0 && isFeatureEnabled("favorites")}
   <!-- <a /> -->
 {:else}
   <div

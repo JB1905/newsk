@@ -1,6 +1,6 @@
 body,
 html {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   min-width: 320px;
 
   @apply text-black antialiased;

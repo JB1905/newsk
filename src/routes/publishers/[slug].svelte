@@ -1,5 +1,5 @@
 <script context="module">
-  import { apiKey } from '../../config/newsapi';
+  import { apiKey } from "../../config/newsapi";
 
   export async function preload({ params }) {
     const res = await this.fetch(
@@ -25,6 +25,8 @@
 
   import { favorite } from '../../store.js';
 
+  import { isFeatureEnabled } from "../../../features";
+
   export let articles;
 
   export const source = articles[0].source;
@@ -48,10 +50,10 @@
 
 <SectionTitle>Latest from: {source.name}</SectionTitle>
 
+{#if isFeatureEnabled("favorites")}
 <button on:click={toggleFavorites}>{fav.includes(source.name)}</button>
+{/if}
 
 {#each articles as article}
   <Article data={article} showSource={false} />
 {/each}
-
-<!-- <LoadMore /> -->
