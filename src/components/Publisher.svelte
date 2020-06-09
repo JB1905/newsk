@@ -2,6 +2,20 @@
   export let data;
 
   const { id, name, description } = data;
+
+  // let fav = null;
+
+  // favorite.subscribe(item => {
+  //   fav = item;
+  // });
+
+  // function toggleFavorites() {
+  //   if (fav.includes(source.name)) {
+  //     fav = fav.filter(item => item !== source.name);
+  //   } else {
+  //     fav = [...fav, source.name];
+  //   }
+  // }
 </script>
 
 <div

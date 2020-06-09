@@ -1,5 +1,5 @@
 <script context="module">
-  import { apiKey } from '../../config/newsapi';
+  import { apiKey } from "../../config/newsapi";
 
   export async function preload({ params }) {
     const res = await this.fetch(
@@ -23,7 +23,6 @@
   import Head from '../../components/Head.svelte';
   import SectionTitle from '../../components/SectionTitle.svelte';
   import Article from '../../components/Article.svelte';
-  import LoadMore from '../../components/LoadMore.svelte';
 
   export let title;
   export let articles;
@@ -36,5 +35,3 @@
 {#each articles as article}
   <Article data={article} showSource={false} />
 {/each}
-
-<LoadMore />

@@ -1,5 +1,5 @@
 <script context="module">
-  import { apiKey } from '../../config/newsapi';
+  import { apiKey } from "../../config/newsapi";
 
   export async function preload({ params }) {
     const res = await this.fetch(
@@ -7,6 +7,8 @@
     );
 
     const data = await res.json();
+
+    // console.log(data.articles[0].source.id);
 
     if (res.status === 200 && data.articles.length > 0) {
       return { title: params.slug, articles: data.articles };
@@ -20,17 +22,38 @@
   import Head from '../../components/Head.svelte';
   import SectionTitle from '../../components/SectionTitle.svelte';
   import Article from '../../components/Article.svelte';
-  import LoadMore from '../../components/LoadMore.svelte';
+
+  import { favorite } from '../../store.js';
+
+  import { isFeatureEnabled } from "../../../features";
 
   export let articles;
+
+  export const source = articles[0].source;
+
+  let fav = null;
+
+  favorite.subscribe(item => {
+    fav = item;
+  });
+
+  function toggleFavorites() {
+    if (fav.includes(source.name)) {
+      fav = fav.filter(item => item !== source.name);
+    } else {
+      fav = [...fav, source.name];
+    }
+  }
 </script>
 
-<Head routeTitle={articles[0].source.name} />
+<Head routeTitle={source.name} />
 
-<SectionTitle>Latest from: {articles[0].source.name}</SectionTitle>
+<SectionTitle>Latest from: {source.name}</SectionTitle>
+
+{#if isFeatureEnabled("favorites")}
+<button on:click={toggleFavorites}>{fav.includes(source.name)}</button>
+{/if}
 
 {#each articles as article}
   <Article data={article} showSource={false} />
 {/each}
-
-<LoadMore />

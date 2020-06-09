@@ -1,12 +1,14 @@
 <script>
-  import SearchForm from '../containers/SearchForm.svelte';
+  import SearchForm from "../containers/SearchForm.svelte";
 
-  import Nav from '../components/Nav.svelte';
+  import Nav from "../components/Nav.svelte";
 
-  import { navigation } from '../constants';
+  import { navigation } from "../constants";
 
-  import FaSearch from 'svelte-icons/fa/FaSearch.svelte';
-  import FaBars from 'svelte-icons/fa/FaBars.svelte';
+  import FaSearch from "svelte-icons/fa/FaSearch.svelte";
+  import FaBars from "svelte-icons/fa/FaBars.svelte";
+
+  import { isFeatureEnabled } from "../../features";
 
   let isMenuShow = false;
 
@@ -24,13 +26,13 @@
 <main class="page m-auto flex flex-col">
   <header
     class="top-0 sticky z-20 flex bg-white dark-mode:bg-gray-900 flex-col
-    items-center shadow-sm overflow-hidden {isSearchFormShow ? 'h-screen' : ''}">
-
+    items-center shadow-sm">
     <div class="max-w-xl w-full">
-      <div class="h-16 flex md:flex-row-reverse items-center justify-between">
+      <div class="h-16 flex items-center justify-between">
         <button
           class="mx-2 text-gray-700 dark-mode:text-gray-400 hover:color-gray-400
-          font-bold py-2 px-4 inline-flex items-center"
+          font-bold p-4 inline-flex items-center"
+          name="toggle-menu"
           on:click={toggleMenu}>
           <div class="w-5 flex">
             <FaBars />
@@ -47,7 +49,8 @@
 
         <button
           class="mx-2 text-gray-700 dark-mode:text-gray-400 hover:color-gray-400
-          font-bold py-2 px-4 inline-flex items-center"
+          font-bold p-4 inline-flex items-center"
+          name="toggle-search-form"
           on:click={toggleSearchForm}>
           <div class="w-5 flex">
             <FaSearch />
@@ -55,14 +58,15 @@
         </button>
       </div>
 
-      <!-- <SearchForm /> -->
+      {#if isMenuShow && isFeatureEnabled("menu")}
+        <Nav {navigation} />
+      {/if}
     </div>
-
-    <!-- {#if isMenuShow}
-      <Nav {navigation} />
-    {/if} -->
-
   </header>
+
+  {#if isSearchFormShow}
+    <SearchForm />
+  {/if}
 
   <div class="flex-1 z-10 px-4 flex max-w-xl w-full mx-auto flex-col">
     <slot />
