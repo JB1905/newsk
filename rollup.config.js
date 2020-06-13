@@ -17,8 +17,6 @@ const onwarn = (warning, onwarn) =>
   (warning.code === "CIRCULAR_DEPENDENCY" &&
     /[/\\]@sapper[/\\]/.test(warning.message)) ||
   onwarn(warning);
-const dedupe = (importee) =>
-  importee === "svelte" || importee.startsWith("svelte/");
 
 export default {
   client: {
@@ -37,14 +35,14 @@ export default {
       }),
       resolve({
         browser: true,
-        dedupe,
+        dedupe: ["svelte"],
       }),
       commonjs(),
 
       legacy &&
         babel({
           extensions: [".js", ".mjs", ".html", ".svelte"],
-          runtimeHelpers: true,
+          babelHelpers: "runtime",
           exclude: ["node_modules/@babel/**"],
           presets: [
             [
@@ -71,6 +69,7 @@ export default {
         }),
     ],
 
+    preserveEntrySignatures: false,
     onwarn,
   },
 
@@ -88,7 +87,7 @@ export default {
         dev,
       }),
       resolve({
-        dedupe,
+        dedupe: ["svelte"],
       }),
       commonjs(),
     ],
@@ -97,6 +96,7 @@ export default {
         Object.keys(process.binding("natives"))
     ),
 
+    preserveEntrySignatures: "strict",
     onwarn,
   },
 
@@ -113,6 +113,7 @@ export default {
       !dev && terser(),
     ],
 
+    preserveEntrySignatures: false,
     onwarn,
   },
 };

@@ -1,12 +1,14 @@
 <script>
-  import SearchForm from "../containers/SearchForm.svelte";
-
-  import Nav from "../components/Nav.svelte";
-
-  import { navigation } from "../constants";
-
   import FaSearch from "svelte-icons/fa/FaSearch.svelte";
   import FaBars from "svelte-icons/fa/FaBars.svelte";
+
+  import SearchForm from "../containers/SearchForm.svelte";
+
+  import Header from "../components/Header.svelte";
+  import Nav from "../components/Nav.svelte";
+  import ActionButton from "../components/ActionButton.svelte";
+
+  import { navigation } from "../constants";
 
   import { isFeatureEnabled } from "../../features";
 
@@ -24,48 +26,31 @@
 </script>
 
 <main class="page m-auto flex flex-col">
-  <header
-    class="top-0 sticky z-20 flex bg-white dark-mode:bg-gray-900 flex-col
-    items-center shadow-sm">
-    <div class="max-w-xl w-full">
-      <div class="h-16 flex items-center justify-between">
-        <button
-          class="mx-2 text-gray-700 dark-mode:text-gray-400 hover:color-gray-400
-          font-bold p-4 inline-flex items-center"
-          name="toggle-menu"
-          on:click={toggleMenu}>
-          <div class="w-5 flex">
-            <FaBars />
-          </div>
-        </button>
+  <Header>
+    <ActionButton click={toggleMenu}>
+      <FaBars />
+    </ActionButton>
+      
 
-        <a rel="prefetch" href="/">
-          <h1
-            class="text-3xl font-title font-black dark-mode:text-white pt-2 pb-2
-            text-center">
-            newsK
-          </h1>
-        </a>
+    <a rel="prefetch" href="/">
+      <h1
+        class="text-3xl font-title font-black dark-mode:text-white pt-2 pb-2
+        text-center">
+        newsK
+      </h1>
+    </a>
 
-        <button
-          class="mx-2 text-gray-700 dark-mode:text-gray-400 hover:color-gray-400
-          font-bold p-4 inline-flex items-center"
-          name="toggle-search-form"
-          on:click={toggleSearchForm}>
-          <div class="w-5 flex">
-            <FaSearch />
-          </div>
-        </button>
-      </div>
+    <ActionButton click={toggleSearchForm}>
+      <FaSearch />
+    </ActionButton>
+  </Header>
 
-      {#if isMenuShow && isFeatureEnabled("menu")}
-        <Nav {navigation} />
-      {/if}
-    </div>
-  </header>
+  {#if isMenuShow && isFeatureEnabled("menu")}
+    <Nav {navigation} />
+  {/if}
 
   {#if isSearchFormShow}
-    <SearchForm />
+    <SearchForm close={toggleSearchForm} />
   {/if}
 
   <div class="flex-1 z-10 px-4 flex max-w-xl w-full mx-auto flex-col">

@@ -1,5 +1,6 @@
 module.exports = {
   theme: {
+    // colors: {},
     screens: {
       sm: "640px",
       md: "768px",
@@ -14,6 +15,22 @@ module.exports = {
     backdropFilter: {
       blur: "blur(20px)",
     },
+    // textSizes: {},
+    // fontWeights: {},
+    // textColors: {},
+    // backgroundColors: {},
+    // borderWidths: {},
+    // borderColors: {},
+    // width: {},
+    // height: {},
+    // minWidth: {},
+    // minHeight: {},
+    // maxWidth: {},
+    // maxHeight: {},
+    // zIndex: {},
+    // opacity: {},
+    // shadows: {}
   },
+  purge: false,
   plugins: [require("tailwindcss-filters")],
 };

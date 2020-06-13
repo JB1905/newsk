@@ -1,151 +1,49 @@
 <script>
   import { goto } from "@sapper/app";
+  import FaTimes from "svelte-icons/fa/FaTimes.svelte";
+
+  import Overlay from '../components/Overlay.svelte'
+  import ActionButton from '../components/ActionButton.svelte'
 
   import { countries } from "../constants/countries";
   import { categories } from "../constants/categories";
-
-  import { isFeatureEnabled } from "../../features";
 
   let dataType = "top-headlines";
 
   let search = "";
 
+  export let close;
+
   const formSubmit = event => {
     if (event.key === "Enter") {
       goto(`top-headlines?q=${search}`);
+
+      close()
     }
   };
 </script>
 
-{#if isFeatureEnabled("advancedSearch")}
-<div
-  class="fixed bg-gray-200 dark-mode:bg-black bg-opacity-75 w-full h-full z-20
-  flex items-center justify-center flex-col md:backdrop-blur">
+<Overlay>
+  <div class="h-full max-h-100 max-w-xl w-full flex flex-col px-2">
+    <header class="h-16 flex items-center justify-end">
+      <ActionButton click={close}>
+        <FaTimes />
+      </ActionButton>
+    </header>
 
-  <button>Close</button>
-
-  <div
-    class="overflow-scroll border-t dark-mode:border-gray-800 h-full md:h-64
-    bg-white dark-mode:bg-gray-900 z-50 dark-mode:text-white max-w-lg rounded-md
-    shadow-md">
-    <div
-      class="sticky top-0 p-4 bg-white dark-mode:bg-gray-900 border-b
-      border-gray-300 dark-mode:border-gray-800">
-      <input
-        class="border dark-mode:border-gray-700 bg-gray-200
-        dark-mode:bg-gray-900 dark-mode:text-gray-500 focus:outline-none
-        focus:shadow-outline rounded-lg py-2 px-4 block w-full appearance-none
-        leading-normal"
-        type="search"
-        bind:value={search}
-        on:keydown={formSubmit}
-        placeholder="Search..."
-        aria-label="Search" />
-    </div>
-
-    <div class="px-4">
-      <div class="py-2">
-        <h3 class="text-xl py-2 font-bold">Data Type</h3>
-
-        <div class="flex flex-col md:flex-row text-center">
-          <label
-            class="md:w-1/3 bg-gray-100 border px-4 py-2 rounded inline-block
-            m-1 cursor-pointer dark-mode:bg-gray-800 dark-mode:border-gray-700">
-            <input class="hidden" type="radio" name="dataType" />
-            Top Headlines
-          </label>
-
-          <label
-            class="md:w-1/3 bg-gray-100 border px-4 py-2 rounded inline-block
-            m-1 cursor-pointer dark-mode:bg-gray-800 dark-mode:border-gray-700">
-            <input class="hidden" type="radio" name="dataType" />
-            Everything
-          </label>
-
-          <label
-            class="md:w-1/3 bg-gray-100 border px-4 py-2 rounded inline-block
-            m-1 cursor-pointer dark-mode:bg-gray-800 dark-mode:border-gray-700">
-            <input class="hidden" type="radio" name="dataType" />
-            Sources
-          </label>
-        </div>
+    <section class="flex-1 px-2 flex">
+      <div class="w-full mt-16">
+        <input
+          class="border-b-2 border-gray-500 dark-mode:border-gray-700 bg-transparent text-3xl	
+          dark-mode:text-gray-500 focus:outline-none
+          focus:shadow-outline py-2 px-4 block w-full appearance-none
+          leading-normal"
+          type="search"
+          bind:value={search}
+          on:keydown={formSubmit}
+          placeholder="Search..."
+          aria-label="Search" />
       </div>
-
-      {#if dataType === 'top-headlines'}
-        <div class="py-2">
-          <h3 class="text-xl py-2 font-bold">Country</h3>
-
-          {#each Object.entries(countries) as [code, name]}
-            <label
-              class="bg-gray-100 dark-mode:bg-gray-800 border
-              dark-mode:border-gray-700 px-4 py-2 rounded inline-block m-1
-              cursor-pointer">
-              <input class="hidden" type="checkbox" />
-              {name}
-            </label>
-          {/each}
-        </div>
-
-        <div class="py-2">
-          <h3 class="text-xl py-2 font-bold">Category</h3>
-
-          {#each categories as category}
-            <label
-              class="bg-gray-100 dark-mode:bg-gray-800 border
-              dark-mode:border-gray-700 px-4 py-2 rounded inline-block m-1
-              cursor-pointer">
-              <input class="hidden" type="checkbox" />
-              {category}
-            </label>
-          {/each}
-        </div>
-      {:else if dataType === 'everything'}
-        <div class="py-2">
-          <h3 class="text-xl py-2 font-bold">Sources</h3>
-
-        </div>
-
-        <div class="py-2">
-          <h3 class="text-xl py-2 font-bold">Domains</h3>
-
-        </div>
-
-        <div class="py-2">
-          <h3 class="text-xl py-2 font-bold">Exclude Domains</h3>
-
-        </div>
-
-        <div class="py-2">
-          <h3 class="text-xl py-2 font-bold">Date Range</h3>
-
-        </div>
-
-        <div class="py-2">
-          <h3 class="text-xl py-2 font-bold">Language</h3>
-
-        </div>
-
-        <div class="py-2">
-          <h3 class="text-xl py-2 font-bold">Order</h3>
-
-        </div>
-      {:else if dataType === 'sources'}
-        <div class="py-2">
-          <h3 class="text-xl py-2 font-bold">Category</h3>
-
-        </div>
-
-        <div class="py-2">
-          <h3 class="text-xl py-2 font-bold">Language</h3>
-
-        </div>
-
-        <div class="py-2">
-          <h3 class="text-xl py-2 font-bold">Country</h3>
-
-        </div>
-      {/if}
-    </div>
+    </section>
   </div>
-</div>
-{/if}
+</Overlay>

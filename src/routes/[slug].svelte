@@ -32,7 +32,6 @@
 
   export let query;
   export let articles;
-  // export let total;
 </script>
 
 <Head routeTitle="Results for: {query}" />
