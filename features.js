@@ -2,7 +2,7 @@ const featureFlags = {
   pagination: false,
   favorites: false,
   advancedSearch: false,
-  menu: false,
+  menu: true,
 };
 
 export const isFeatureEnabled = (name) => featureFlags[name];
