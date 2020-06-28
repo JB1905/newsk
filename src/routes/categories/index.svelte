@@ -7,7 +7,6 @@
 <Head routeTitle="Countries" />
 
 <div class="flex-col justify-center flex flex-1 h-full">
-  <!-- <div class="flex-col justify-center flex flex-1 h-full mt-4"> -->
   {#each categories as category, index}
     <a rel="prefetch" href="/categories/{category}">
       <h3

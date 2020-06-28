@@ -1,6 +1,5 @@
 <script>
   import { goto } from '@sapper/app';
-  // import FaTimes from 'svelte-icons/fa/FaTimes.svelte';
 
   import Overlay from '../components/Overlay.svelte';
   import ActionButton from '../components/ActionButton.svelte';
@@ -12,13 +11,9 @@
 
   let search = '';
 
-  // export let close;
-
   const formSubmit = (event) => {
     if (event.key === 'Enter') {
       goto(`top-headlines?q=${search}`);
-
-      // close();
     }
   };
 </script>

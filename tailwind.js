@@ -2,18 +2,18 @@ module.exports = {
   theme: {
     // colors: {},
     screens: {
-      sm: "640px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
-      "dark-mode": { raw: "(prefers-color-scheme: dark)" },
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      'dark-mode': { raw: '(prefers-color-scheme: dark)' },
     },
     fontFamily: {
-      title: ["Headland One", "serif"],
-      body: ["Fira Sans", "sans-serif"],
+      title: ['Headland One', 'serif'],
+      body: ['Fira Sans', 'sans-serif'],
     },
     backdropFilter: {
-      blur: "blur(20px)",
+      blur: 'blur(20px)',
     },
     // textSizes: {},
     // fontWeights: {},
@@ -32,5 +32,5 @@ module.exports = {
     // shadows: {}
   },
   purge: false,
-  plugins: [require("tailwindcss-filters")],
+  plugins: [require('tailwindcss-filters')],
 };

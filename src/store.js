@@ -1,4 +1,4 @@
-import { writable } from "svelte/store";
+import { writable } from 'svelte/store';
 
 const createWritableStore = (key, startValue) => {
   const { subscribe, set } = writable(startValue);
@@ -20,4 +20,4 @@ const createWritableStore = (key, startValue) => {
   };
 };
 
-export const favorite = createWritableStore("favorite", []);
+export const favorite = createWritableStore('favorite', []);
