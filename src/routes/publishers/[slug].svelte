@@ -1,5 +1,5 @@
 <script context="module">
-  import { apiKey } from "../../config/newsapi";
+  import { apiKey } from '../../config/newsapi';
 
   export async function preload({ params }) {
     const res = await this.fetch(
@@ -7,8 +7,6 @@
     );
 
     const data = await res.json();
-
-    // console.log(data.articles[0].source.id);
 
     if (res.status === 200 && data.articles.length > 0) {
       return { title: params.slug, articles: data.articles };
@@ -25,7 +23,7 @@
 
   import { favorite } from '../../store.js';
 
-  import { isFeatureEnabled } from "../../../features";
+  import { isFeatureEnabled } from '../../../features';
 
   export let articles;
 
@@ -33,13 +31,13 @@
 
   let fav = null;
 
-  favorite.subscribe(item => {
+  favorite.subscribe((item) => {
     fav = item;
   });
 
   function toggleFavorites() {
     if (fav.includes(source.name)) {
-      fav = fav.filter(item => item !== source.name);
+      fav = fav.filter((item) => item !== source.name);
     } else {
       fav = [...fav, source.name];
     }
@@ -50,8 +48,8 @@
 
 <SectionTitle>Latest from: {source.name}</SectionTitle>
 
-{#if isFeatureEnabled("favorites")}
-<button on:click={toggleFavorites}>{fav.includes(source.name)}</button>
+{#if isFeatureEnabled('favorites')}
+  <button on:click={toggleFavorites}>{fav.includes(source.name)}</button>
 {/if}
 
 {#each articles as article}

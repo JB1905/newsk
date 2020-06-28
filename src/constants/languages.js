@@ -11,6 +11,6 @@ export const languages = {
   pt: "Portuguese",
   ru: "Russian",
   se: "Sami",
-  // ud: '',
+  ud: "", // TODO
   zh: "Chinese",
 };
