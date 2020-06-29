@@ -11,7 +11,7 @@
     url,
     urlToImage,
     publishedAt,
-    source
+    source,
   } = data;
 
   const date = new Date(publishedAt);
@@ -30,7 +30,7 @@
     </a>
   {/if}
 
-  <div class="px-4 py-4">
+  <div class="p-4">
     <a href={url}>
       <h3 class="font-bold text-xl dark-mode:text-white mb-2">{title}</h3>
     </a>
@@ -42,7 +42,7 @@
     {/if}
   </div>
 
-  <div class="px-4 py-4">
+  <div class="p-4">
     <span
       class="inline-block bg-gray-200 dark-mode:bg-gray-800 rounded-full px-3
       py-1 text-sm font-semibold text-gray-700 dark-mode:text-gray-500 mr-2">

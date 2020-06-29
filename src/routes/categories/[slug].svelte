@@ -1,5 +1,5 @@
 <script context="module">
-  import { apiKey } from "../../config/newsapi";
+  import { apiKey } from '../../config/newsapi';
 
   export async function preload({ params }) {
     const res = await this.fetch(
@@ -11,7 +11,8 @@
     if (res.status === 200 && data.articles.length > 0) {
       return {
         title: `${params.slug[0].toUpperCase()}${params.slug.slice(1)}`,
-        articles: data.articles
+        articles: data.articles,
+        totalResults: data.totalResults,
       };
     } else {
       this.error(res.status, data.message);
@@ -23,9 +24,11 @@
   import Head from '../../components/Head.svelte';
   import SectionTitle from '../../components/SectionTitle.svelte';
   import Article from '../../components/Article.svelte';
+  import Pagination from '../../components/Pagination.svelte';
 
   export let title;
   export let articles;
+  export let totalResults;
 </script>
 
 <Head routeTitle={title} />
@@ -35,3 +38,7 @@
 {#each articles as article}
   <Article data={article} showSource={false} />
 {/each}
+
+{#if totalResults > 10}
+  <Pagination />
+{/if}

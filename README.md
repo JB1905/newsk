@@ -39,7 +39,7 @@ yarn
 ##### 4. Set environment variables
 
 - Edit `.env.example` file
-- Rename `.env.example` to `.env.local`
+- Rename `.env.example` to `.env`
 
 ##### 5. Run
 

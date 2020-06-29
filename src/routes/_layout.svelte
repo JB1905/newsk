@@ -1,16 +1,17 @@
 <script>
-  import FaSearch from "svelte-icons/fa/FaSearch.svelte";
-  import FaBars from "svelte-icons/fa/FaBars.svelte";
+  import FaSearch from 'svelte-icons/fa/FaSearch.svelte';
+  import FaBars from 'svelte-icons/fa/FaBars.svelte';
 
-  import SearchForm from "../containers/SearchForm.svelte";
+  import SearchForm from '../containers/SearchForm.svelte';
 
-  import Header from "../components/Header.svelte";
-  import Nav from "../components/Nav.svelte";
-  import ActionButton from "../components/ActionButton.svelte";
+  import Overlay from '../components/Overlay.svelte';
+  import Header from '../components/Header.svelte';
+  import Nav from '../components/Nav.svelte';
+  import ActionButton from '../components/ActionButton.svelte';
 
-  import { navigation } from "../constants";
+  import { navigation } from '../constants';
 
-  import { isFeatureEnabled } from "../../features";
+  import { isFeatureEnabled } from '../../features';
 
   let isMenuShow = false;
 
@@ -27,10 +28,9 @@
 
 <main class="page m-auto flex flex-col">
   <Header>
-    <ActionButton click={toggleMenu}>
+    <ActionButton on:click={toggleMenu} name="toggle-menu">
       <FaBars />
     </ActionButton>
-      
 
     <a rel="prefetch" href="/">
       <h1
@@ -40,18 +40,16 @@
       </h1>
     </a>
 
-    <ActionButton click={toggleSearchForm}>
+    <ActionButton on:click={toggleSearchForm} name="open-search-form">
       <FaSearch />
     </ActionButton>
   </Header>
 
-  {#if isMenuShow && isFeatureEnabled("menu")}
+  <!-- <Overlay>
     <Nav {navigation} />
-  {/if}
 
-  {#if isSearchFormShow}
-    <SearchForm close={toggleSearchForm} />
-  {/if}
+    <SearchForm />
+  </Overlay> -->
 
   <div class="flex-1 z-10 px-4 flex max-w-xl w-full mx-auto flex-col">
     <slot />

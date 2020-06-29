@@ -1,10 +1,10 @@
 <script context="module">
-  import { apiKey } from "../config/newsapi";
+  import { apiKey } from '../config/newsapi';
 
   export async function preload({ params, query }) {
     const queryParams = Object.entries(query)
       .map(([key, value]) => `${key}=${value}`)
-      .join("&");
+      .join('&');
 
     const res = await this.fetch(
       `https://newsapi.org/v2/${params.slug}?q=${query.q}&${queryParams}&apiKey=${apiKey}`
@@ -16,7 +16,7 @@
       return {
         query: query.q,
         articles: data.articles,
-        total: data.totalResults
+        total: data.totalResults,
       };
     } else {
       this.error(res.status, data.message);
@@ -28,7 +28,6 @@
   import Head from '../components/Head.svelte';
   import SectionTitle from '../components/SectionTitle.svelte';
   import Article from '../components/Article.svelte';
-  import Pagination from '../components/Pagination.svelte';
 
   export let query;
   export let articles;

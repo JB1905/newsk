@@ -1,15 +1,15 @@
-describe("Newsk", () => {
+describe('Newsk', () => {
   beforeEach(() => {
-    cy.visit("/");
+    cy.visit('/');
   });
 
-  it("", () => {
-    // cy.get('button[name="toggle-menu"]').click();
+  it('', () => {
+    cy.get('button[name="toggle-menu"]').click();
   });
 
-  it("", () => {
-    cy.get('button[name="toggle-search-form"]').click();
+  it('', () => {
+    cy.get('button[name="open-search-form"]').click();
 
-    cy.get('input[type="search"]').type("Apple{enter}");
+    cy.get('input[type="search"]').type('Apple{enter}');
   });
 });
