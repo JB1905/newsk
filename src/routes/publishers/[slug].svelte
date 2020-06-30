@@ -11,7 +11,7 @@
     if (res.status === 200 && data.articles.length > 0) {
       return {
         articles: data.articles,
-        totalResults: data.totalResults,
+        totalResults: data.totalResults
       };
     } else {
       this.error(res.status, data.message);
@@ -23,10 +23,8 @@
   import Head from '../../components/Head.svelte';
   import SectionTitle from '../../components/SectionTitle.svelte';
   import Article from '../../components/Article.svelte';
-  import Pagination from '../../components/Pagination.svelte';
 
   export let articles;
-  export let totalResults;
 
   export const source = articles[0].source;
 </script>
@@ -38,7 +36,3 @@
 {#each articles as article}
   <Article data={article} showSource={false} />
 {/each}
-
-{#if totalResults > 10}
-  <Pagination />
-{/if}

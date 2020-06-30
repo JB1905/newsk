@@ -1,9 +1,11 @@
 <script context="module">
   import { apiKey } from '../../config/newsapi';
 
-  export async function preload({ params }) {
+  export async function preload({ params, query }) {
+    const page = query.p || 1;
+
     const res = await this.fetch(
-      `https://newsapi.org/v2/top-headlines?category=${params.slug}&apiKey=${apiKey}`
+      `https://newsapi.org/v2/top-headlines?category=${params.slug}&page=${page}&apiKey=${apiKey}`
     );
 
     const data = await res.json();
@@ -12,7 +14,7 @@
       return {
         title: `${params.slug[0].toUpperCase()}${params.slug.slice(1)}`,
         articles: data.articles,
-        totalResults: data.totalResults,
+        totalResults: data.totalResults
       };
     } else {
       this.error(res.status, data.message);
@@ -39,6 +41,4 @@
   <Article data={article} showSource={false} />
 {/each}
 
-{#if totalResults > 10}
-  <Pagination />
-{/if}
+<Pagination items={totalResults} />

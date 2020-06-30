@@ -26,7 +26,17 @@
   }
 </script>
 
-<main class="page m-auto flex flex-col">
+<main class="page m-auto flex flex-col relative">
+  <!-- <div class="flex justify-between fixed w-full z-30">
+    <ActionButton on:click={toggleMenu} name="toggle-menu">
+      <FaBars />
+    </ActionButton>
+
+    <ActionButton on:click={toggleSearchForm} name="open-search-form">
+      <FaSearch />
+    </ActionButton>
+  </div> -->
+
   <Header>
     <ActionButton on:click={toggleMenu} name="toggle-menu">
       <FaBars />
@@ -45,11 +55,13 @@
     </ActionButton>
   </Header>
 
-  <!-- <Overlay>
+  {#if isMenuShow}
     <Nav {navigation} />
+  {/if}
 
+  {#if isSearchFormShow}
     <SearchForm />
-  </Overlay> -->
+  {/if}
 
   <div class="flex-1 z-10 px-4 flex max-w-xl w-full mx-auto flex-col">
     <slot />
