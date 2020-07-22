@@ -5,7 +5,7 @@
 </script>
 
 <Overlay>
-  <div class="flex-col justify-center flex flex-1 h-full w-full">
+  <div class="flex-col justify-center flex flex-1 h-full w-full max-w-xl px-4">
     {#each navigation as navigationItem, index}
       <a rel="prefetch" href={navigationItem.href}>
         <h3

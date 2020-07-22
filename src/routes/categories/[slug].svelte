@@ -2,7 +2,7 @@
   import { apiKey } from '../../config/newsapi';
 
   export async function preload({ params, query }) {
-    const page = query.p || 1;
+    const page = query.page || 1;
 
     const res = await this.fetch(
       `https://newsapi.org/v2/top-headlines?category=${params.slug}&page=${page}&apiKey=${apiKey}`

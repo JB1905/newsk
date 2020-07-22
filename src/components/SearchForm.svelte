@@ -48,14 +48,16 @@
       </section>
 
       <section class="flex-1 px-2 flex flex-col mt-8 mb-8">
-        <h4 class="text-lg font-medium text-gray-700">Countries</h4>
+        <h4 class="text-lg font-medium text-gray-700 dark-mode:text-gray-500">
+          Countries
+        </h4>
 
         <div class="w-full mt-4">
           {#each Object.values(countries) as country}
             <span
               on:click={() => add(country)}
               class="mr-2 mb-2 px-2 py-1 inline-block whitespace-no-wrap
-              border-solid text-gray-600 border-2 {x.includes(country) ? 'border-gray-900' : 'border-gray-400'}">
+              border-solid text-gray-600 border-2 {x.includes(country) ? 'border-gray-900 dark-mode:border-gray-100' : 'border-gray-400 dark-mode:border-gray-600'}">
               {country}
             </span>
           {/each}
@@ -63,15 +65,20 @@
       </section>
 
       <section class="flex-1 px-2 flex flex-col mt-8 mb-4">
-        <h4 class="text-lg font-medium text-gray-700">Categories</h4>
+        <h4 class="text-lg font-medium text-gray-700 dark-mode:text-gray-500">
+          Categories
+        </h4>
 
         <div class="w-full mt-4">
           {#each Object.values(categories) as category}
-            <span
-              class="mr-2 mb-2 px-2 py-1 inline-block whitespace-no-wrap
-              border-solid border-gray-400 text-gray-600 border-2">
+            <label>
+              <input
+                type="checkbox"
+                class="mr-2 mb-2 px-2 py-1 inline-block whitespace-no-wrap
+                border-solid text-gray-600 border-2 border-gray-400
+                dark-mode:border-gray-600" />
               {category}
-            </span>
+            </label>
           {/each}
         </div>
       </section>
