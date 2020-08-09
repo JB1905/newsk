@@ -6,6 +6,8 @@ import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import sapperEnv from 'sapper-environment';
 import config from 'sapper/config/rollup.js';
+import autoPreprocess from 'svelte-preprocess';
+import typescript from 'rollup-plugin-typescript2';
 
 import pkg from './package.json';
 
@@ -20,7 +22,7 @@ const onwarn = (warning, onwarn) =>
 
 export default {
   client: {
-    input: config.client.input(),
+    input: config.client.input().replace(/\.js$/, '.ts'),
     output: config.client.output(),
     plugins: [
       replace({
@@ -30,6 +32,7 @@ export default {
       }),
       svelte({
         dev,
+        preprocess: autoPreprocess(),
         hydratable: true,
         emitCss: true,
       }),
@@ -38,6 +41,7 @@ export default {
         dedupe: ['svelte'],
       }),
       commonjs(),
+      typescript(),
 
       legacy &&
         babel({
@@ -74,7 +78,7 @@ export default {
   },
 
   server: {
-    input: config.server.input(),
+    input: config.server.input().server.replace(/\.js$/, '.ts'),
     output: config.server.output(),
     plugins: [
       replace({
@@ -83,6 +87,7 @@ export default {
         'process.env.NODE_ENV': JSON.stringify(mode),
       }),
       svelte({
+        preprocess: autoPreprocess(),
         generate: 'ssr',
         dev,
       }),
@@ -90,6 +95,7 @@ export default {
         dedupe: ['svelte'],
       }),
       commonjs(),
+      typescript(),
     ],
     external: Object.keys(pkg.dependencies).concat(
       require('module').builtinModules ||
