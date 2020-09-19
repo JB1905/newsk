@@ -3,20 +3,20 @@ html {
   font-family: 'Fira Sans', sans-serif;
   min-width: 320px;
 
-  /* @apply text-black antialiased;
+  @apply text-black antialiased;
 
   @screen dark-mode {
     @apply text-white;
-  } */
+  }
 }
 
 .page {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   min-height: -webkit-fill-available;
 
-  @media (display-mode: standalone) {
+  /* @media (display-mode: standalone) {
     min-height: 100vh;
-  }
+  } */
 }
 
 header {

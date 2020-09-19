@@ -1,6 +1,5 @@
 <script>
   import Head from '../components/Head.svelte';
-  import ActionButton from '../components/ActionButton.svelte';
 </script>
 
 <Head />

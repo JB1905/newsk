@@ -2,12 +2,18 @@
   import { apiKey } from '../config/newsapi';
 
   export async function preload({ params, query }) {
-    const queryParams = Object.entries(query)
-      .map(([key, value]) => `${key}=${value}`)
-      .join('&');
+    const page = query.p || 1;
+
+    // const queryParams = Object.entries(query)
+    //   .map(([key, value]) => `${key}=${value}`)
+    //   .join('&');
+
+    // const res = await this.fetch(
+    // `https://newsapi.org/v2/${params.slug}?q=${query.q}&${queryParams}&apiKey=${apiKey}`
+    // );
 
     const res = await this.fetch(
-      `https://newsapi.org/v2/${params.slug}?q=${query.q}&${queryParams}&apiKey=${apiKey}`
+      `https://newsapi.org/v2/${params.slug}?q=${query.q}&apiKey=${apiKey}`
     );
 
     const data = await res.json();
@@ -16,7 +22,7 @@
       return {
         query: query.q,
         articles: data.articles,
-        total: data.totalResults,
+        totalResults: data.totalResults
       };
     } else {
       this.error(res.status, data.message);
@@ -28,9 +34,11 @@
   import Head from '../components/Head.svelte';
   import SectionTitle from '../components/SectionTitle.svelte';
   import Article from '../components/Article.svelte';
+  import Pagination from '../components/Pagination.svelte';
 
   export let query;
   export let articles;
+  export let totalResults;
 </script>
 
 <Head routeTitle="Results for: {query}" />
@@ -40,3 +48,5 @@
 {#each articles as article}
   <Article data={article} />
 {/each}
+
+<Pagination items={totalResults} />
