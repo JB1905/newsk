@@ -11,7 +11,7 @@
     if (res.status === 200 && data.articles.length > 0) {
       return {
         articles: data.articles,
-        totalResults: data.totalResults
+        totalResults: data.totalResults,
       };
     } else {
       this.error(res.status, data.message);

@@ -12,13 +12,7 @@ html {
 
 .page {
   min-height: 100vh;
-  /* min-height: -webkit-fill-available; */
 
-  /* @media (display-mode: standalone) {
-    min-height: 100vh;
-  } */
-
-  /* TODO */
   @supports (-webkit-touch-callout: none) {
     min-height: -webkit-fill-available;
 

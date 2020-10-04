@@ -1,11 +1,17 @@
 <script lang="ts">
-  export let navigation;
+  interface NavigationItem {
+    title: string;
+    href: string;
+  }
+
+  export let navigation: NavigationItem[];
 
   import Overlay from '../components/Overlay.svelte';
 </script>
 
 <Overlay>
-  <div class="flex-col justify-center flex flex-1 h-full w-full max-w-xl px-4">
+  <div
+    class="flex-col justify-center flex flex-1 h-full w-full max-w-xl px-4 mx-auto">
     {#each navigation as navigationItem, index}
       <a rel="prefetch" href={navigationItem.href}>
         <h3

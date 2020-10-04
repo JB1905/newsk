@@ -22,7 +22,7 @@
       return {
         query: query.q,
         articles: data.articles,
-        totalResults: data.totalResults
+        totalResults: data.totalResults,
       };
     } else {
       this.error(res.status, data.message);

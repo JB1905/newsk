@@ -7,10 +7,10 @@
   export let activePage = 0;
 
   const switchPage = async (page: number) => {
-    // console.log(page);
     activePage = page;
+
     dispatch('change', {
-      page
+      page,
     });
   };
 
@@ -59,7 +59,7 @@
   }
 </style>
 
-<!-- <script>
+<!--<script>
   export let items;
   export let perPage = 10;
   export let currentPage;

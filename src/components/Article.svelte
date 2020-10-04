@@ -1,7 +1,22 @@
 <script lang="ts">
   import td from 'two-digit';
 
-  export let data;
+  type Source = {
+    id: string | null;
+    name: string;
+  };
+
+  interface Data {
+    title: string;
+    description: string;
+    author: string | null;
+    url: string;
+    urlToImage: string;
+    publishedAt: Date;
+    source: Source;
+  }
+
+  export let data: Data;
   export let showSource = true;
 
   const {

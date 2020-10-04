@@ -10,19 +10,19 @@
 
   let search = '';
 
-  const x = [];
+  const params = [];
 
-  const add = item => {
-    if (x.includes(item)) {
-      x.filter(i => i !== item);
+  const add = (item) => {
+    if (params.includes(item)) {
+      params.filter((param) => param !== item);
     } else {
-      x.push(item);
+      params.push(item);
     }
 
-    console.log(x);
+    console.log(params);
   };
 
-  const formSubmit = event => {
+  const formSubmit = (event) => {
     if (event.key === 'Enter') {
       goto(`top-headlines?q=${search}`);
     }

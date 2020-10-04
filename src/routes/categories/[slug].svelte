@@ -14,7 +14,7 @@
       return {
         title: `${params.slug[0].toUpperCase()}${params.slug.slice(1)}`,
         articles: data.articles,
-        totalResults: data.totalResults
+        totalResults: data.totalResults,
       };
     } else {
       this.error(res.status, data.message);

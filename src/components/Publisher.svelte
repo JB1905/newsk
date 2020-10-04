@@ -1,5 +1,11 @@
 <script lang="ts">
-  export let data;
+  interface Data {
+    id: string;
+    name: string;
+    description: string;
+  }
+
+  export let data: Data;
 
   const { id, name, description } = data;
 </script>
