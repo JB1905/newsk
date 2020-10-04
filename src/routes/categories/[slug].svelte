@@ -1,5 +1,5 @@
-<script context="module">
-  import { apiKey } from '../../config/newsapi';
+<script lang="ts" context="module">
+  import { apiKey } from '../../config/newsapi.ts'; // TODO
 
   export async function preload({ params, query }) {
     const page = query.page || 1;
@@ -22,7 +22,7 @@
   }
 </script>
 
-<script>
+<script lang="ts">
   import Head from '../../components/Head.svelte';
   import SectionTitle from '../../components/SectionTitle.svelte';
   import Article from '../../components/Article.svelte';

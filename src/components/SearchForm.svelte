@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
   import { goto } from '@sapper/app';
 
   import Overlay from '../components/Overlay.svelte';
 
-  import { countries } from '../constants/countries';
-  import { categories } from '../constants/categories';
+  import { countries } from '../constants/countries.ts';
+  import { categories } from '../constants/categories.ts';
 
   let dataType = 'top-headlines';
 

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   export let navigation;
 
   import Overlay from '../components/Overlay.svelte';

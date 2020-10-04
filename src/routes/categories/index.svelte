@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
   import Head from '../../components/Head.svelte';
 
-  import { categories } from '../../constants';
+  import { categories } from '../../constants/index.ts'; // TODO
 </script>
 
 <Head routeTitle="Countries" />

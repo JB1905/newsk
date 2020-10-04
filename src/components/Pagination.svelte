@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from 'svelte';
 
   const dispatch = createEventDispatcher();
@@ -6,15 +6,15 @@
   export let totalPages = 1;
   export let activePage = 0;
 
-  const switchPage = async page => {
-    console.log(page);
+  const switchPage = async (page: number) => {
+    // console.log(page);
     activePage = page;
     dispatch('change', {
       page
     });
   };
 
-  const isInRange = page => {
+  const isInRange = (page: number) => {
     if (page < 3 || page >= totalPages - 3) {
       return true;
     }

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import FaSearch from 'svelte-icons/fa/FaSearch.svelte';
   import FaBars from 'svelte-icons/fa/FaBars.svelte';
   import FaTimes from 'svelte-icons/fa/FaTimes.svelte';
@@ -9,13 +9,15 @@
   import SearchForm from '../components/SearchForm.svelte';
   import ActionButton from '../components/ActionButton.svelte';
 
-  import { navigation } from '../constants';
+  import { navigation } from '../constants/index.ts'; // TODO
 
   import { isFeatureEnabled } from '../../features';
 
+  type Modal = 'menu' | 'search';
+
   let visibleModal = null;
 
-  const openModal = modal => {
+  const openModal = (modal: Modal) => {
     visibleModal = modal;
   };
 
@@ -23,7 +25,7 @@
     visibleModal = null;
   };
 
-  const toggleModal = modal => {
+  const toggleModal = (modal: Modal) => {
     if (visibleModal === modal) {
       closeModal();
     } else {

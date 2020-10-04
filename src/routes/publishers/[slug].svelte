@@ -1,5 +1,5 @@
 <script context="module">
-  import { apiKey } from '../../config/newsapi';
+  import { apiKey } from '../../config/newsapi.ts'; // TODO
 
   export async function preload({ params }) {
     const res = await this.fetch(

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import td from 'two-digit';
 
   export let data;
