@@ -13,11 +13,11 @@ module.exports = {
       title: ['Headland One', 'serif'],
       body: ['Fira Sans', 'sans-serif'],
     },
-    colors: {
-      primary: colors.coolGray,
-      secondary: '',
-      neutral: ''
-    }
+    // colors: {
+    //   primary: colors.coolGray,
+    //   secondary: '',
+    //   neutral: ''
+    // }
   },
   // purge: false,
   // purge: [], // TODO
