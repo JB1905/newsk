@@ -1,16 +1,16 @@
 <script lang="ts">
   import Header from '../components/Header.svelte';
-	import Footer from '../components/Footer.svelte'
+  import Footer from '../components/Footer.svelte';
 </script>
 
 <Header>
   <a href="/">
-		<h1
-			class="text-3xl font-title font-black dark-mode:text-white pt-2 pb-2
+    <h1
+      class="text-3xl font-title font-black dark-mode:text-white pt-2 pb-2
 			text-center">
-			newsK
-		</h1>
-	</a>
+      newsK
+    </h1>
+  </a>
 </Header>
 
 <main>

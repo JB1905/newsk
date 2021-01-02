@@ -1,7 +1,7 @@
 <script lang="ts">
   interface NavigationItem {
-   readonly title: string;
-   readonly href: string;
+    readonly title: string;
+    readonly href: string;
   }
 
   export let navigation: NavigationItem[];

@@ -12,9 +12,9 @@
 
   const params = [];
 
-  const add = item => {
+  const add = (item) => {
     if (params.includes(item)) {
-      params.filter(param => param !== item);
+      params.filter((param) => param !== item);
     } else {
       params.push(item);
     }
@@ -22,7 +22,7 @@
     console.log(params);
   };
 
-  const formSubmit = event => {
+  const formSubmit = (event) => {
     if (event.key === 'Enter') {
       goto(`top-headlines?q=${search}`);
     }

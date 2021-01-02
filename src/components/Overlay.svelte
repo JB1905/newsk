@@ -1,10 +1,10 @@
-<!-- <style>
+<!--<style>
   .overlay-content {
     margin-top: 60px;
     height: calc(100% - 60px);
     overflow: auto;
   }
-</style> -->
+</style>-->
 
 <div
   class="fixed bg-gray-200 dark-mode:bg-black w-full h-full z-20 flex

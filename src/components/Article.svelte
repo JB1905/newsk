@@ -1,17 +1,17 @@
 <script lang="ts">
   type Source = {
-   readonly id: string | null;
-   readonly name: string;
+    readonly id: string | null;
+    readonly name: string;
   };
 
   interface Data {
-   readonly title: string;
-   readonly description: string;
-   readonly author: string | null;
-   readonly url: string;
-   readonly urlToImage: string;
-   readonly publishedAt: Date;
-   readonly source: Source;
+    readonly title: string;
+    readonly description: string;
+    readonly author: string | null;
+    readonly url: string;
+    readonly urlToImage: string;
+    readonly publishedAt: Date;
+    readonly source: Source;
   }
 
   export let data: Data;
