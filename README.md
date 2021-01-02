@@ -74,7 +74,7 @@ docker build -t newsk .
 ##### 4. Run a container with port forwarding
 
 ```sh
-docker run --rm --env PORT=80 -p 3000:80 newsk
+docker run --rm -p 3000:3000 newsk
 ```
 
 ## Build with
