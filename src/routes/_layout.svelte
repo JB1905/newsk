@@ -5,7 +5,6 @@
 
 <Header>
   <a href="/">
-  <!-- <a rel="prefetch" href="/"> -->
 		<h1
 			class="text-3xl font-title font-black dark-mode:text-white pt-2 pb-2
 			text-center">
