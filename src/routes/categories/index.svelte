@@ -1,10 +1,11 @@
-<script lang="ts">
+<script>
+// <script lang="ts">
   import Head from '../../components/Head.svelte';
 
-  import { categories } from '../../constants/index.ts';
+  import { categories } from '../../constants';
 </script>
 
-<Head routeTitle="Countries" />
+<Head routeTitle="Categories" />
 
 <div class="flex-col justify-center flex flex-1 h-full">
   {#each categories as category, index}

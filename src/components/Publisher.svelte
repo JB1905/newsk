@@ -1,8 +1,8 @@
 <script lang="ts">
   interface Data {
-    id: string;
-    name: string;
-    description: string;
+    readonly id: string;
+    readonly name: string;
+    readonly description: string;
   }
 
   export let data: Data;

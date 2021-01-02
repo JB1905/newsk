@@ -19,7 +19,8 @@
 
     <meta name="mobile-web-app-capable" content="yes" />
 
-    <meta name="theme-color" content="#333333" />
+    <!-- TODO -->
+    <!-- <meta name="theme-color" content="#333333" /> -->
 
     %sapper.base%
 
@@ -28,7 +29,12 @@
     <meta name="msapplication-starturl" content="index.html" />
     <link rel="shortcut icon" href="favicon.ico" />
 
-    %sapper.styles% %sapper.head%
+    <link
+      href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,700|Headland+One&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
+
+    %sapper.scripts% %sapper.styles% %sapper.head%
 
     <link rel="apple-touch-icon" href="../static/assets/apple-icon-180.png" />
 
@@ -168,6 +174,6 @@
   <body class="bg-gray-200 dark-mode:bg-black">
     <div id="sapper">%sapper.html%</div>
 
-    %sapper.scripts%
+    <!-- %sapper.scripts% -->
   </body>
 </html>

@@ -1,19 +1,17 @@
 <script lang="ts">
-  import td from 'two-digit';
-
   type Source = {
-    id: string | null;
-    name: string;
+   readonly id: string | null;
+   readonly name: string;
   };
 
   interface Data {
-    title: string;
-    description: string;
-    author: string | null;
-    url: string;
-    urlToImage: string;
-    publishedAt: Date;
-    source: Source;
+   readonly title: string;
+   readonly description: string;
+   readonly author: string | null;
+   readonly url: string;
+   readonly urlToImage: string;
+   readonly publishedAt: Date;
+   readonly source: Source;
   }
 
   export let data: Data;
@@ -31,9 +29,7 @@
 
   const date = new Date(publishedAt);
 
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
+  const formattedDate = new Intl.DateTimeFormat('en-US').format(date);
 </script>
 
 <div
@@ -61,7 +57,7 @@
     <span
       class="inline-block bg-gray-200 dark-mode:bg-gray-800 rounded-full px-3
       py-1 text-sm font-semibold text-gray-700 dark-mode:text-gray-500 mr-2">
-      {year}.{td(month)}.{td(day)}
+      {formattedDate}
     </span>
 
     {#if author}

@@ -3,11 +3,11 @@ html {
   font-family: 'Fira Sans', sans-serif;
   min-width: 320px;
 
-  @apply text-black antialiased;
+  /* @apply text-black antialiased;
 
   @screen dark-mode {
     @apply text-white;
-  }
+  } */
 }
 
 .page {
@@ -33,11 +33,11 @@ footer {
 img {
   font-size: 0;
 
-  @screen dark-mode {
+  /* @screen dark-mode {
     filter: grayscale(50%);
-  }
+  } */
 }
 
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */

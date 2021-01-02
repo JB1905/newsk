@@ -1,5 +1,6 @@
-<script context="module">
-  import { apiKey } from '../../constants/newsapi.ts';
+<script lang="ts" context="module">
+  import { apiKey } from '../../constants/newsapi';
+  import { BASE_PATH } from '../../constants/basePath';
 
   export async function preload({ params }) {
     const res = await this.fetch(
