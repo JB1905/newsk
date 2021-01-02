@@ -27,6 +27,8 @@ $ git clone https://github.com/JB1905/newsk.git
 $ cd /path/to/newsk
 ```
 
+### Development
+
 ##### 3. Install dependencies
 
 ```sh
@@ -59,6 +61,20 @@ $ npm run watch:tailwind
 
 # Or use yarn
 $ yarn watch:tailwind
+```
+
+### Production
+
+##### 3. Build image
+
+```sh
+docker build -t map-comparificator .
+```
+
+##### 4. Run a container with port forwarding
+
+```sh
+docker run --rm --env PORT=80 -p 3000:80 map-comparificator
 ```
 
 ## Build with
