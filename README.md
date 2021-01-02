@@ -68,13 +68,13 @@ $ yarn watch:tailwind
 ##### 3. Build image
 
 ```sh
-docker build -t map-comparificator .
+docker build -t newsk .
 ```
 
 ##### 4. Run a container with port forwarding
 
 ```sh
-docker run --rm --env PORT=80 -p 3000:80 map-comparificator
+docker run --rm --env PORT=80 -p 3000:80 newsk
 ```
 
 ## Build with
