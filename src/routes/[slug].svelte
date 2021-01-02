@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-  import { apiKey } from '../config/newsapi.ts'; // TODO
+  import { apiKey } from '../constants/newsapi.ts';
 
   export async function preload({ params, query }) {
     const page = query.p || 1;
@@ -13,7 +13,7 @@
     // );
 
     const res = await this.fetch(
-      `https://newsapi.org/v2/${params.slug}?q=${query.q}&apiKey=${apiKey}`
+      `${BASE_PATH}${params.slug}?q=${query.q}&apiKey=${apiKey}`
     );
 
     const data = await res.json();

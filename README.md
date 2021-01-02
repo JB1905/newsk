@@ -18,22 +18,22 @@ Svelte news browser
 ##### 1. Clone repo
 
 ```sh
-git clone https://github.com/JB1905/newsk.git
+$ git clone https://github.com/JB1905/newsk.git
 ```
 
 ##### 2. Go to directory
 
 ```sh
-cd newsk
+$ cd /path/to/newsk
 ```
 
 ##### 3. Install dependencies
 
 ```sh
-npm i
+$ npm i
 
-# Or, use yarn
-yarn
+# Or use yarn
+$ yarn
 ```
 
 ##### 4. Set environment variables
@@ -46,19 +46,19 @@ yarn
 - Project:
 
 ```sh
-npm run dev
+$ npm run dev
 
-# Or, use yarn
-yarn dev
+# Or use yarn
+$ yarn dev
 ```
 
 - Tailwind CSS:
 
 ```sh
-npm run watch:tailwind
+$ npm run watch:tailwind
 
-# Or, use yarn
-yarn watch:tailwind
+# Or use yarn
+$ yarn watch:tailwind
 ```
 
 ## Build with

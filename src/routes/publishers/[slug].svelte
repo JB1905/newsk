@@ -1,9 +1,9 @@
 <script context="module">
-  import { apiKey } from '../../config/newsapi.ts'; // TODO
+  import { apiKey } from '../../constants/newsapi.ts';
 
   export async function preload({ params }) {
     const res = await this.fetch(
-      `https://newsapi.org/v2/top-headlines?sources=${params.slug}&apiKey=${apiKey}`
+      `${BASE_PATH}top-headlines?sources=${params.slug}&apiKey=${apiKey}`
     );
 
     const data = await res.json();

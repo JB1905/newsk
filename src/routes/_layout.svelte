@@ -9,7 +9,7 @@
   import SearchForm from '../components/SearchForm.svelte';
   import ActionButton from '../components/ActionButton.svelte';
 
-  import { navigation } from '../constants/index.ts'; // TODO
+  import { navigation } from '../constants/index.ts';
 
   import { isFeatureEnabled } from '../../features';
 
