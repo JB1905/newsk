@@ -2,7 +2,7 @@
 
 ## About
 
-Svelte news browser
+News browser with search by category, language, country & more
 
 ##### Main Features
 
@@ -82,6 +82,7 @@ docker run --rm --env PORT=80 -p 3000:80 newsk
 - [Svelte](https://svelte.dev/)
 - [Sapper](https://sapper.svelte.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [Cypress](https://www.cypress.io/)
 - [Netlify](https://www.netlify.com/)
 - [Docker](https://www.docker.com/)
