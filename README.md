@@ -13,6 +13,10 @@ News browser with search by category, language, country & more
 
 [Open newsK](https://newsk.netlify.app/)
 
+## Prerequisites
+
+- News API API key
+
 ## Setup
 
 ##### 1. Clone repo
