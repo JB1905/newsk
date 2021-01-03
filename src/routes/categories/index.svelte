@@ -1,5 +1,4 @@
 <script>
-  // <script lang="ts">
   import Head from '../../components/Head.svelte';
 
   import { categories } from '../../constants';

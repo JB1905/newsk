@@ -35,7 +35,7 @@
   import Head from '../components/Head.svelte';
   import SectionTitle from '../components/SectionTitle.svelte';
   import Article from '../components/Article.svelte';
-  // import Pagination from '../components/Pagination.svelte';
+  import Pagination from '../components/Pagination.svelte';
 
   export let query;
   export let articles;
@@ -50,4 +50,4 @@
   <Article data={article} />
 {/each}
 
-<!-- <Pagination items={totalResults} /> -->
+<Pagination items={totalResults} />
