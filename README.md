@@ -35,8 +35,8 @@ $ cd /path/to/newsk
 
 ##### 3. Set environment variables
 
-- Edit `.env.example` file
-- Rename `.env.example` to `.env`
+- Copy `.env.example` to `.env`
+- Set environment variables in `.env`
 
 ### Development
 
