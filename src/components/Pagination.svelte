@@ -1,7 +1,5 @@
 <script lang="ts">
-export let items: number;
+  export let items: number;
 </script>
 
-<div>
-  <a href="#">Next Page</a>
-</div>
+<div><a href="#">Next Page</a></div>

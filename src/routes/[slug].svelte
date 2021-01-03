@@ -1,21 +1,29 @@
 <script lang="ts" context="module">
+  import queryString from 'query-string';
+
   import { apiKey } from '../constants/newsapi';
   import { BASE_PATH } from '../constants/basePath';
 
   export async function preload({ params, query }) {
     const page = query.p || 1;
 
-    // const queryParams = Object.entries(query)
-    //   .map(([key, value]) => `${key}=${value}`)
-    //   .join('&');
-
-    // const res = await this.fetch(
-    // `https://newsapi.org/v2/${params.slug}?q=${query.q}&${queryParams}&apiKey=${apiKey}`
-    // );
-
-    const res = await this.fetch(
-      `${BASE_PATH}${params.slug}?q=${query.q}&apiKey=${apiKey}`
+    // TODO
+    const url = queryString.stringifyUrl(
+      {
+        url: `${BASE_PATH}${params.slug}`,
+        query: {
+          q: query.q,
+          ...query,
+          page,
+          apiKey,
+        },
+      },
+      {
+        skipEmptyString: true,
+      }
     );
+
+    const res = await this.fetch(url);
 
     const data = await res.json();
 

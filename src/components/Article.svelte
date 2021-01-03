@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Badge from './Badge.svelte';
+
   type Source = {
     readonly id: string | null;
     readonly name: string;
@@ -54,27 +56,17 @@
   </div>
 
   <div class="p-4">
-    <span
-      class="inline-block bg-gray-200 dark-mode:bg-gray-800 rounded-full px-3
-      py-1 text-sm font-semibold text-gray-700 dark-mode:text-gray-500 mr-2">
-      {formattedDate}
-    </span>
+    <Badge>{formattedDate}</Badge>
 
     {#if author}
-      <span
-        class="inline-block bg-gray-200 dark-mode:bg-gray-800 rounded-full px-3
-        py-1 text-sm font-semibold text-gray-700 dark-mode:text-gray-500 mr-2">
+      <Badge>
         {@html author}
-      </span>
+      </Badge>
     {/if}
 
     {#if showSource}
       <a rel="prefetch" href="publishers/{source.id}">
-        <span
-          class="inline-block bg-gray-200 dark-mode:bg-gray-800 rounded-full
-          px-3 py-1 text-sm font-semibold text-gray-700 dark-mode:text-gray-500">
-          {source.name}
-        </span>
+        <Badge>{source.name}</Badge>
       </a>
     {/if}
   </div>

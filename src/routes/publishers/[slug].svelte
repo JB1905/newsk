@@ -1,11 +1,25 @@
 <script lang="ts" context="module">
+  import queryString from 'query-string';
+
   import { apiKey } from '../../constants/newsapi';
   import { BASE_PATH } from '../../constants/basePath';
 
   export async function preload({ params }) {
-    const res = await this.fetch(
-      `${BASE_PATH}top-headlines?sources=${params.slug}&apiKey=${apiKey}`
+    // TODO
+    const url = queryString.stringifyUrl(
+      {
+        url: `${BASE_PATH}top-headlines`,
+        query: {
+          sources: params.slug,
+          apiKey,
+        },
+      },
+      {
+        skipEmptyString: true,
+      }
     );
+
+    const res = await this.fetch(url);
 
     const data = await res.json();
 
