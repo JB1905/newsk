@@ -37,7 +37,7 @@
 <div
   class="article w-full rounded-lg bg-white dark-mode:bg-gray-900
   overflow-hidden shadow mx-auto mb-4">
-  {#if urlToImage}
+  {#if urlToImage && urlToImage !== 'null'}
     <a href={url}>
       <img class="w-full" src={urlToImage} alt={title} loading="lazy" />
     </a>
