@@ -1,5 +1,5 @@
 <header
-  class="top-0 sticky z-20 flex flex-col items-center bg-white
+  class="top-0 sticky z-2000 flex flex-col items-center bg-white
   dark-mode:bg-gray-900 shadow-sm">
   <div class="w-full max-w-xl h-16 flex items-center justify-center px-2">
     <slot />

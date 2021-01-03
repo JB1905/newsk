@@ -3,8 +3,12 @@
   import FaBars from 'svelte-icons/fa/FaBars.svelte';
 
   import Header from '../components/Header.svelte';
+  import Nav from '../components/Nav.svelte';
+  import SearchForm from '../components/SearchForm.svelte';
   import ActionButton from '../components/ActionButton.svelte';
   import Footer from '../components/Footer.svelte';
+
+  import { navigation } from '../constants';
 
   type Modal = 'menu' | 'search';
 
@@ -44,6 +48,12 @@
     <FaSearch />
   </ActionButton>
 </Header>
+
+{#if visibleModal === 'menu'}
+  <Nav {navigation} />
+{:else if visibleModal === 'search'}
+  <SearchForm />
+{/if}
 
 <main class="flex-1 z-10 px-4 flex max-w-xl w-full mx-auto flex-col">
   <slot />

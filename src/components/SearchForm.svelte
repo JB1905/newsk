@@ -18,8 +18,6 @@
     } else {
       params.push(item);
     }
-
-    console.log(params);
   };
 
   const formSubmit = (event) => {
