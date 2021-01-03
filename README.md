@@ -15,6 +15,8 @@ News browser with search by category, language, country & more
 
 ## Prerequisites
 
+- Node.js
+- npm/Yarn
 - News API API key
 
 ## Setup
