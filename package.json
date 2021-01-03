@@ -14,6 +14,7 @@
     "build:tailwind": "NODE_ENV=production postcss static/tailwind.css -o static/index.css",
     "validate": "svelte-check --ignore src/node_modules/@sapper",
     "deploy": "netlify deploy --dir __sapper__/export --prod",
+    "prettier": "prettier --write '{src,static}/**/*.{svelte,ts,js,css,json,html}'",
     "commit": "git-cz",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
@@ -56,8 +57,8 @@
     "svelte": "^3.31.1",
     "svelte-check": "^1.1.24",
     "svelte-preprocess": "^4.6.1",
-    "tslib": "^2.0.3",
     "tailwindcss": "^2.0.2",
+    "tslib": "^2.0.3",
     "typescript": "^4.1.3"
   },
   "config": {
