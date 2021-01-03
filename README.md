@@ -33,9 +33,14 @@ $ git clone https://github.com/JB1905/newsk.git
 $ cd /path/to/newsk
 ```
 
+##### 3. Set environment variables
+
+- Edit `.env.example` file
+- Rename `.env.example` to `.env`
+
 ### Development
 
-##### 3. Install dependencies
+##### 4. Install dependencies
 
 ```sh
 $ npm i
@@ -43,11 +48,6 @@ $ npm i
 # Or use yarn
 $ yarn
 ```
-
-##### 4. Set environment variables
-
-- Edit `.env.example` file
-- Rename `.env.example` to `.env`
 
 ##### 5. Run
 
@@ -71,13 +71,13 @@ $ yarn watch:tailwind
 
 ### Production
 
-##### 3. Build image
+##### 4. Build image
 
 ```sh
 docker build -t newsk .
 ```
 
-##### 4. Run a container with port forwarding
+##### 5. Run a container with port forwarding
 
 ```sh
 docker run --rm -p 3000:3000 newsk
