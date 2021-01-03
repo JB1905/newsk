@@ -6,6 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "//TODO": "run dev and watch:tailwind in one command",
     "dev": "sapper dev",
     "build": "npm run build:tailwind && sapper build --legacy",
     "export": "sapper export --legacy",

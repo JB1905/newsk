@@ -6,7 +6,7 @@
 
 <Overlay>
   <nav class="w-48">
-    <!-- <ul
+    <ul
       class="flex flex-col justify-center text-gray-700 bg-white bg-opacity-75
       dark-mode:bg-gray-900 dark-mode:text-gray-500 rounded-b-lg shadow-lg mx-4
       backdrop-blur">
@@ -17,6 +17,6 @@
           </a>
         </li>
       {/each}
-    </ul> -->
+    </ul>
   </nav>
 </Overlay>
