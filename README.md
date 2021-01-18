@@ -1,4 +1,4 @@
-# newsK
+# newsK (WIP)
 
 ## About
 
