@@ -1,11 +1,16 @@
 {
   "short_name": "newsK",
   "name": "newsK",
-  "background_color": "#ffffff",
-  "theme_color": "#333333",
-  "display": "standalone",
   "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#333333",
+  "background_color": "#ffffff",
   "icons": [
+    {
+      "src": "assets/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
     {
       "src": "assets/manifest-icon-192.png",
       "sizes": "192x192",
