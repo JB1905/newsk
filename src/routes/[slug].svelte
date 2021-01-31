@@ -23,7 +23,9 @@
       }
     );
 
-    const res = await this.fetch(url);
+    const res = await this.fetch(url, {
+      'Access-Control-Allow-Origin': '*',
+    });
 
     const data = await res.json();
 

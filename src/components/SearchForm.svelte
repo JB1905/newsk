@@ -33,20 +33,21 @@
       <section class="flex-1 px-2 flex">
         <div class="w-full mt-16">
           <input
-            class="border-b-2 border-gray-400 dark-mode:border-gray-700
-            bg-transparent text-3xl dark-mode:text-gray-500 focus:outline-none
+            class="border-b-2 border-gray-400 dark:border-gray-700
+            bg-transparent text-3xl dark:text-gray-500 focus:outline-none
             focus:shadow-outline py-2 block w-full appearance-none
             leading-normal"
             type="search"
             bind:value={search}
             on:keydown={formSubmit}
             placeholder="Search..."
-            aria-label="Search" />
+            aria-label="Search"
+          />
         </div>
       </section>
 
       <section class="flex-1 px-2 flex flex-col mt-8 mb-8">
-        <!-- <h4 class="text-lg font-medium text-gray-700 dark-mode:text-gray-500">
+        <!-- <h4 class="text-lg font-medium text-gray-700 dark:text-gray-500">
           Countries
         </h4> -->
 
@@ -55,7 +56,11 @@
             <span
               on:click={() => add(country)}
               class="mr-2 mb-2 px-2 py-1 inline-block whitespace-no-wrap
-              border-solid text-gray-600 border-2 {x.includes(country) ? 'border-gray-900 dark-mode:border-gray-100' : 'border-gray-400 dark-mode:border-gray-600'}">
+              border-solid text-gray-600 border-2 {x.includes(
+                country
+              )
+                ? 'border-gray-900 dark:border-gray-100'
+                : 'border-gray-400 dark:border-gray-600'}">
               {country}
             </span>
           {/each}
@@ -63,7 +68,7 @@
       </section>
 
       <section class="flex-1 px-2 flex flex-col mt-8 mb-4">
-        <h4 class="text-lg font-medium text-gray-700 dark-mode:text-gray-500">
+        <h4 class="text-lg font-medium text-gray-700 dark:text-gray-500">
           Categories
         </h4>
 
@@ -74,7 +79,8 @@
                 type="checkbox"
                 class="mr-2 mb-2 px-2 py-1 inline-block whitespace-no-wrap
                 border-solid text-gray-600 border-2 border-gray-400
-                dark-mode:border-gray-600" />
+                dark:border-gray-600"
+              />
               {category}
             </label>
           {/each}
