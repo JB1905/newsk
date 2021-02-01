@@ -35,8 +35,9 @@
 </script>
 
 <div
-  class="article w-full rounded-lg bg-white dark-mode:bg-gray-900
-  overflow-hidden shadow mx-auto mb-4">
+  class="article w-full rounded-lg bg-white dark:bg-gray-900
+  overflow-hidden shadow mx-auto mb-4"
+>
   {#if urlToImage && urlToImage !== 'null'}
     <a href={url}>
       <img class="w-full" src={urlToImage} alt={title} loading="lazy" />
@@ -45,11 +46,11 @@
 
   <div class="p-4">
     <a href={url}>
-      <h3 class="font-bold text-xl dark-mode:text-white mb-2">{title}</h3>
+      <h3 class="font-bold text-xl dark:text-white mb-2">{title}</h3>
     </a>
 
     {#if description}
-      <p class="text-gray-700 dark-mode:text-gray-500 text-base">
+      <p class="text-gray-700 dark:text-gray-500 text-base">
         {@html description}
       </p>
     {/if}

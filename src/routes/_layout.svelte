@@ -38,10 +38,9 @@
 
   <a href="/">
     <h1
-      class="text-3xl font-title font-black dark-mode:text-white pt-2 pb-2
-			text-center">
-      newsK
-    </h1>
+      class="text-3xl font-title font-black dark:text-white pt-2 pb-2
+			text-center"
+    >newsK</h1>
   </a>
 
   <ActionButton on:click={() => toggleModal('search')} name="open-search-form">
@@ -55,7 +54,7 @@
   <SearchForm />
 {/if}
 
-<main class="flex-1 z-10 px-4 flex max-w-xl w-full mx-auto flex-col">
+<main class="flex-1 px-4 flex max-w-xl w-full mx-auto flex-col">
   <slot />
 </main>
 
