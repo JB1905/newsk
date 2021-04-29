@@ -1,0 +1,30 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: husky
+    versions:
+    - 4.3.8
+  - dependency-name: "@rollup/plugin-babel"
+    versions:
+    - 5.2.3
+  - dependency-name: svelte-preprocess
+    versions:
+    - 4.6.5
+  - dependency-name: rollup
+    versions:
+    - 2.38.2
+  - dependency-name: svelte
+    versions:
+    - 3.32.1
+  - dependency-name: "@types/node"
+    versions:
+    - 14.14.22
+  - dependency-name: "@rollup/plugin-node-resolve"
+    versions:
+    - 11.1.1
